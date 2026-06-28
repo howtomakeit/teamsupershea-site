@@ -718,6 +718,20 @@
       margin-bottom: 56px;
     }
 
+    .team-bio {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: rgba(255,255,255,0.72);
+      max-width: 640px;
+      margin: 0 auto 52px;
+      padding: 24px 32px;
+      border-left: 3px solid var(--gold);
+      background: rgba(245,166,35,0.06);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      text-align: left;
+      font-weight: 600;
+    }
+
     .team-list {
       display: flex;
       flex-direction: column;
@@ -1158,16 +1172,17 @@
     </a>
     <ul class="nav-links">
       <li><a href="#story">Shea's Story</a></li>
-      <li><a href="#hike">The Hike</a></li>
+      <li><a href="#hike">2026 Hike</a></li>
       <li><a href="#team">Our Team</a></li>
       <li><a href="past-events.html">Past Hikes</a></li>
+      <li><a href="#supporters">Community Champions</a></li>
       <li><a href="https://www.instagram.com/ariane_like_maryanne?igsh=MW5ydGxnMnEwazdraA==" target="_blank" rel="noopener" aria-label="Ariane on Instagram">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
       </a></li>
       <li><a href="https://linktr.ee/ArianeLucas?utm_source=linktree_profile_share&ltsid=01f92b5c-df3f-49eb-8ffe-0dbfefe08ae5" target="_blank" rel="noopener" aria-label="Ariane's Linktree">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="vertical-align:middle"><path d="M7.953 15.066c-.08.163-.08.324-.08.486.08.517.528.897 1.052.897h2.172v4.716c0 .57.41 1.067.974 1.14a1.14 1.14 0 0 0 1.222-1.14v-4.716h2.252a1.07 1.07 0 0 0 1.052-.897c0-.162 0-.323-.08-.486l-3.864-7.438a1.02 1.02 0 0 0-.892-.546 1.02 1.02 0 0 0-.892.546L7.953 15.066zm3.945-12.01L9.344 5.61a.54.54 0 0 0 0 .762l2.554 2.554-2.554 2.555a.54.54 0 0 0 0 .761l.677.677a.54.54 0 0 0 .762 0L12 10.844l1.217 1.075a.54.54 0 0 0 .762 0l.677-.677a.54.54 0 0 0 0-.761L12.1 8.926l2.556-2.554a.54.54 0 0 0 0-.762l-2.556-2.554a.54.54 0 0 0-.762 0l-.677.677a.54.54 0 0 0 0 .762l1.076 1.216-1.076 1.055-1.075-1.055a.54.54 0 0 0-.762 0z"/></svg>
       </a></li>
-      <li><a href="#donate" class="nav-donate">Donate Now</a></li>
+      <li><a href="#donate" class="nav-donate">Donate</a></li>
     </ul>
     <button class="nav-hamburger" aria-label="Open navigation menu" aria-expanded="false">
       <span></span><span></span><span></span>
@@ -1178,9 +1193,10 @@
   <div class="mobile-menu" role="dialog" aria-label="Navigation menu">
     <ul class="mobile-menu-links">
       <li><a href="#story">Shea's Story</a></li>
-      <li><a href="#hike">The Hike</a></li>
+      <li><a href="#hike">2026 Hike</a></li>
       <li><a href="#team">Our Team</a></li>
       <li><a href="past-events.html">Past Hikes</a></li>
+      <li><a href="#supporters">Community Champions</a></li>
       <li>
         <div class="mobile-menu-social">
           <a href="https://www.instagram.com/ariane_like_maryanne?igsh=MW5ydGxnMnEwazdraA==" target="_blank" rel="noopener" aria-label="Ariane on Instagram">
@@ -1366,12 +1382,18 @@
     <div class="team-section-inner">
       <div class="section-label">Yosemite 2026</div>
       <h2 class="team-section-title">OUR TEAM</h2>
+      <p class="team-bio">
+        Since 2018, Team Super-Shea has gone all in for the Cystic Fibrosis Foundation.
+        Several local 5k's, fitness events at Angel's Stadium, Workouts for CF, and
+        5 XTREME hikes later, they're still fighting for a cure —
+        one rep, one mile, one year at a time!
+      </p>
       <div class="team-list">
 
         <div class="team-member team-member--captain">
           <div class="team-member-left">
             <div class="team-member-number">01</div>
-            <div class="team-member-avatar" style="background: linear-gradient(135deg, var(--gold) 0%, #e08e00 100%); color: var(--dark);">A</div>
+            <div class="team-member-avatar" style="background: linear-gradient(135deg, var(--gold) 0%, #e08e00 100%);"><img src="images/ariane.jpeg" alt="Ariane Lucas" /></div>
             <div>
               <div class="team-member-name">Ariane Lucas</div>
               <div class="team-member-tagline">
@@ -1390,13 +1412,13 @@
         <div class="team-member">
           <div class="team-member-left">
             <div class="team-member-number">02</div>
-            <div class="team-member-avatar">C</div>
+            <div class="team-member-avatar"><img src="images/cathy.jpeg" alt="Cathy Lucas" /></div>
             <div>
               <div class="team-member-name">Cathy Lucas</div>
               <div class="team-member-tagline">Hiker &bull; Team Super Shea</div>
               <p class="team-member-bio">
-                A devoted member of Team Super Shea, Cathy laces up year after year,
-                giving every mile to Shea and the entire CF community.
+                Cathy fundraises for the Cystic Fibrosis Foundation in honor of their nephew,
+                Shea, all while handling the hardest role on the team: being married to the team captain!
               </p>
             </div>
           </div>
@@ -1406,29 +1428,29 @@
         <div class="team-member">
           <div class="team-member-left">
             <div class="team-member-number">03</div>
-            <div class="team-member-avatar">M</div>
+            <div class="team-member-avatar"><img src="images/mike.jpeg" alt="Mike Rush" /></div>
             <div>
-              <div class="team-member-name">Michael Rush</div>
+              <div class="team-member-name">Mike Rush</div>
               <div class="team-member-tagline">Hiker &bull; Team Super Shea</div>
               <p class="team-member-bio">
-                Michael brings grit and heart to every climb, powering through the
-                toughest stretches in the fight against cystic fibrosis.
+                With a love for the cold but a warm heart, Mike has a knack for keeping
+                everyone laughing on and off the trail.
               </p>
             </div>
           </div>
-          <a href="https://fundraise.cff.org/yosemite2026/Donate/Index/2139960?submit=Continue" target="_blank" rel="noopener" class="team-donate-btn">Donate for Michael</a>
+          <a href="https://fundraise.cff.org/yosemite2026/Donate/Index/2139960?submit=Continue" target="_blank" rel="noopener" class="team-donate-btn">Donate for Mike</a>
         </div>
 
         <div class="team-member">
           <div class="team-member-left">
             <div class="team-member-number">04</div>
-            <div class="team-member-avatar">J</div>
+            <div class="team-member-avatar"><img src="images/jen.jpeg" alt="Jen Rush" /></div>
             <div>
               <div class="team-member-name">Jen Rush</div>
               <div class="team-member-tagline">Hiker &bull; Team Super Shea</div>
               <p class="team-member-bio">
-                Jen hikes with unstoppable spirit, raising hope and funds for Shea
-                and everyone living with CF.
+                Jen brings a genuine passion to Team Super-Shea, driven to help however
+                she can and make the biggest difference possible for the Cystic Fibrosis Foundation.
               </p>
             </div>
           </div>
@@ -1440,7 +1462,7 @@
   </div>
 
   <!-- SUPPORTERS -->
-  <div class="supporters-section full-bleed">
+  <div class="supporters-section full-bleed" id="supporters">
     <div class="supporters-inner">
       <div class="section-label">Our Community Champions</div>
       <h2 class="section-title">Powered by <span>People Who Care</span></h2>
