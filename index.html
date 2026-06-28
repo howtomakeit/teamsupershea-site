@@ -627,6 +627,8 @@
     }
 
     .amount-chip {
+      display: inline-block;
+      text-decoration: none;
       background: rgba(255,255,255,0.12);
       border: 1px solid rgba(255,255,255,0.25);
       color: var(--white);
@@ -635,8 +637,10 @@
       padding: 12px 24px;
       border-radius: 50px;
       cursor: pointer;
-      transition: background 0.2s, border-color 0.2s;
+      transition: background 0.2s, border-color 0.2s, transform 0.2s;
     }
+
+    .amount-chip:hover { transform: translateY(-2px); }
 
     .amount-chip:hover,
     .amount-chip.featured {
@@ -786,6 +790,15 @@
       color: rgba(255,255,255,0.4);
       font-weight: 600;
       margin-top: 3px;
+    }
+
+    .team-member-bio {
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.62);
+      font-weight: 500;
+      line-height: 1.55;
+      margin-top: 10px;
+      max-width: 460px;
     }
 
     .team-donate-btn {
@@ -1232,37 +1245,11 @@
     </div>
   </section>
 
-  <!-- DONATE -->
-  <div class="donate-section full-bleed" id="donate">
-    <div class="donate-inner">
-      <div class="section-label">Make a Difference</div>
-      <h2 class="section-title">Every Dollar <span>Counts</span></h2>
-      <p class="section-body">
-        Your donation goes directly to the Cystic Fibrosis Foundation to fund life-changing
-        research and support for families like ours. No amount is too small — and every dollar
-        is a step closer to a cure for Shea and the thousands of others fighting CF every day.
-      </p>
-      <div class="donate-amount-row">
-        <div class="amount-chip">$25</div>
-        <div class="amount-chip featured">$50</div>
-        <div class="amount-chip">$100</div>
-        <div class="amount-chip">$250</div>
-        <div class="amount-chip">$500</div>
-      </div>
-      <a href="https://fundraise.cff.org/yosemite2026/teamsupershea25" target="_blank" rel="noopener" class="donate-btn-large">
-        Donate to Team Super Shea
-      </a>
-      <p class="donate-secure">
-        Secure donation processed by the Cystic Fibrosis Foundation &bull; 501(c)(3) nonprofit
-      </p>
-    </div>
-  </div>
-
   <!-- TEAM -->
   <div class="team-section full-bleed" id="team">
     <div class="team-section-inner">
       <div class="section-label">Yosemite 2026</div>
-      <h2 class="team-section-title">THE TEAM</h2>
+      <h2 class="team-section-title">OUR TEAM</h2>
       <div class="team-list">
 
         <div class="team-member team-member--captain">
@@ -1274,6 +1261,11 @@
               <div class="team-member-tagline">
                 <span class="captain-badge">Team Captain</span> &bull; Xtreme Hike Year 6
               </div>
+              <p class="team-member-bio">
+                Team captain and Shea's proud aunt, Ariane has led Team Super Shea up the
+                trail for six straight years. Her heart and determination are the driving
+                force behind everything this team does.
+              </p>
             </div>
           </div>
           <a href="https://fundraise.cff.org/yosemite2026/Donate/Index/2128397?submit=Continue" target="_blank" rel="noopener" class="team-donate-btn">Donate for Ariane</a>
@@ -1286,6 +1278,10 @@
             <div>
               <div class="team-member-name">Cathy Lucas</div>
               <div class="team-member-tagline">Hiker &bull; Team Super Shea</div>
+              <p class="team-member-bio">
+                A devoted member of Team Super Shea, Cathy laces up year after year,
+                giving every mile to Shea and the entire CF community.
+              </p>
             </div>
           </div>
           <a href="https://fundraise.cff.org/yosemite2026/Donate/Index/2128397?submit=Continue" target="_blank" rel="noopener" class="team-donate-btn">Donate for Cathy</a>
@@ -1298,6 +1294,10 @@
             <div>
               <div class="team-member-name">Michael Rush</div>
               <div class="team-member-tagline">Hiker &bull; Team Super Shea</div>
+              <p class="team-member-bio">
+                Michael brings grit and heart to every climb, powering through the
+                toughest stretches in the fight against cystic fibrosis.
+              </p>
             </div>
           </div>
           <a href="https://fundraise.cff.org/yosemite2026/Donate/Index/2139960?submit=Continue" target="_blank" rel="noopener" class="team-donate-btn">Donate for Michael</a>
@@ -1310,6 +1310,10 @@
             <div>
               <div class="team-member-name">Jen Rush</div>
               <div class="team-member-tagline">Hiker &bull; Team Super Shea</div>
+              <p class="team-member-bio">
+                Jen hikes with unstoppable spirit, raising hope and funds for Shea
+                and everyone living with CF.
+              </p>
             </div>
           </div>
           <a href="https://fundraise.cff.org/yosemite2026/Member/MyPage/10153564/Jen-Rush" target="_blank" rel="noopener" class="team-donate-btn">Donate for Jen</a>
@@ -1367,6 +1371,32 @@
         </div>
 
       </div>
+    </div>
+  </div>
+
+  <!-- DONATE -->
+  <div class="donate-section full-bleed" id="donate">
+    <div class="donate-inner">
+      <div class="section-label">Make a Difference</div>
+      <h2 class="section-title">Every Dollar <span>Counts</span></h2>
+      <p class="section-body">
+        Your donation goes directly to the Cystic Fibrosis Foundation to fund life-changing
+        research and support for families like ours. No amount is too small — and every dollar
+        is a step closer to a cure for Shea and the thousands of others fighting CF every day.
+      </p>
+      <div class="donate-amount-row">
+        <a href="https://fundraise.cff.org/yosemite2026/teamsupershea25?amount=25" target="_blank" rel="noopener" class="amount-chip">$25</a>
+        <a href="https://fundraise.cff.org/yosemite2026/teamsupershea25?amount=50" target="_blank" rel="noopener" class="amount-chip featured">$50</a>
+        <a href="https://fundraise.cff.org/yosemite2026/teamsupershea25?amount=100" target="_blank" rel="noopener" class="amount-chip">$100</a>
+        <a href="https://fundraise.cff.org/yosemite2026/teamsupershea25?amount=250" target="_blank" rel="noopener" class="amount-chip">$250</a>
+        <a href="https://fundraise.cff.org/yosemite2026/teamsupershea25?amount=500" target="_blank" rel="noopener" class="amount-chip">$500</a>
+      </div>
+      <a href="https://fundraise.cff.org/yosemite2026/teamsupershea25" target="_blank" rel="noopener" class="donate-btn-large">
+        Donate to Team Super Shea
+      </a>
+      <p class="donate-secure">
+        Secure donation processed by the Cystic Fibrosis Foundation &bull; 501(c)(3) nonprofit
+      </p>
     </div>
   </div>
 
