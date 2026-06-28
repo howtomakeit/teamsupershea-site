@@ -167,40 +167,77 @@
       background: linear-gradient(90deg, #FF0000, #FF7700, #FFFF00, #00CC00, #0000FF, #8B00FF);
     }
 
-    /* HIKE COUNT BAND */
-    .count-band {
-      display: flex;
-      justify-content: center;
-      gap: 0;
+    /* PAST HIKES CALLOUT */
+    .past-hikes-callout {
       background: var(--dark);
-      padding: 36px 40px;
-      flex-wrap: wrap;
-    }
-
-    .count-item {
+      padding: 72px 40px 60px;
       text-align: center;
-      padding: 0 40px;
-      border-right: 1px solid rgba(255,255,255,0.1);
+      position: relative;
+      overflow: hidden;
     }
 
-    .count-item:last-child { border-right: none; }
+    .past-hikes-callout::before {
+      content: '';
+      position: absolute;
+      width: 600px; height: 600px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(245,166,35,0.06) 0%, transparent 70%);
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+    }
 
-    .count-num {
+    .callout-logo {
+      height: 120px;
+      width: auto;
+      margin-bottom: 28px;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      filter: drop-shadow(0 0 24px rgba(245,166,35,0.35));
+    }
+
+    .callout-headline {
       font-family: 'Playfair Display', serif;
-      font-size: 2.2rem;
+      font-size: clamp(2rem, 5vw, 3.8rem);
       font-weight: 900;
-      color: var(--gold);
-      line-height: 1;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      background: linear-gradient(90deg,#FF1744,#FF7700,#FFD300,#00E676,#00B0FF,#D500F9,#FF1744);
+      background-size: 200% auto;
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      animation: neon-flow 4s linear infinite, neon-flicker 3.2s infinite;
+      line-height: 1.1;
+      margin-bottom: 14px;
     }
 
-    .count-label {
-      font-size: 0.78rem;
+    .callout-sub {
+      font-size: 1rem;
       font-weight: 700;
       color: rgba(255,255,255,0.5);
-      margin-top: 5px;
+      letter-spacing: 1.5px;
       text-transform: uppercase;
-      letter-spacing: 0.5px;
+      margin-bottom: 36px;
     }
+
+    .callout-chevrons {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0;
+      line-height: 0.5;
+    }
+
+    .callout-chevron {
+      width: 64px;
+      height: 64px;
+      animation: neon-bounce 1.5s ease-in-out infinite, neon-pulse 2.4s ease-in-out infinite;
+    }
+
+    .callout-chevron:nth-child(2) { animation-delay: 0.22s, 0.22s; opacity: 0.75; }
+    .callout-chevron:nth-child(3) { animation-delay: 0.44s, 0.44s; opacity: 0.5; }
 
     /* TIMELINE */
     .timeline-section {
@@ -505,9 +542,9 @@
 
       .page-hero { padding: 110px 24px 60px; }
 
-      .count-band { padding: 32px 24px; gap: 20px; }
-      .count-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.1); padding: 0 0 20px; width: 100%; }
-      .count-item:last-child { border-bottom: none; padding-bottom: 0; }
+      .past-hikes-callout { padding: 56px 24px 48px; }
+      .callout-logo { height: 90px; }
+      .callout-chevron { width: 48px; height: 48px; }
 
       .timeline-section { padding: 60px 24px; }
 
@@ -529,6 +566,71 @@
       .upcoming-card { padding: 32px 24px; }
 
       footer { padding: 40px 24px; }
+    }
+
+    /* ── RAINBOW NEON ARROWS ── */
+    .neon-arrows {
+      text-align: center;
+      margin: -20px auto 56px;
+    }
+
+    .neon-text {
+      font-family: 'Playfair Display', serif;
+      font-weight: 900;
+      font-size: 1.05rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      background: linear-gradient(90deg,#FF1744,#FF7700,#FFD300,#00E676,#00B0FF,#D500F9,#FF1744);
+      background-size: 200% auto;
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      margin-bottom: 14px;
+      animation: neon-flow 4s linear infinite, neon-flicker 3.2s infinite;
+    }
+
+    .neon-chevrons {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      line-height: 0.55;
+    }
+
+    .neon-chevron {
+      width: 46px;
+      height: 46px;
+      animation: neon-bounce 1.6s ease-in-out infinite, neon-pulse 2.4s ease-in-out infinite;
+    }
+
+    .neon-chevron:nth-child(2) { animation-delay: 0.18s, 0.18s; opacity: 0.85; }
+    .neon-chevron:nth-child(3) { animation-delay: 0.36s, 0.36s; opacity: 0.7; }
+
+    @keyframes neon-flow {
+      0%   { background-position: 0% center; }
+      100% { background-position: 200% center; }
+    }
+
+    @keyframes neon-flicker {
+      0%, 100%  { opacity: 1; }
+      92%       { opacity: 1; }
+      94%       { opacity: 0.45; }
+      96%       { opacity: 1; }
+      97%       { opacity: 0.6; }
+      98%       { opacity: 1; }
+    }
+
+    @keyframes neon-bounce {
+      0%, 100% { transform: translateY(0); }
+      50%      { transform: translateY(9px); }
+    }
+
+    @keyframes neon-pulse {
+      0%, 100% { filter: drop-shadow(0 0 3px rgba(255,23,68,0.55)) drop-shadow(0 0 7px rgba(0,176,255,0.45)); }
+      50%      { filter: drop-shadow(0 0 9px rgba(255,23,68,0.95)) drop-shadow(0 0 16px rgba(213,0,249,0.8)); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .neon-text, .neon-chevron { animation: none; }
     }
   </style>
 </head>
@@ -562,23 +664,27 @@
   </div>
   <div class="rainbow-bar"></div>
 
-  <!-- COUNT BAND -->
-  <div class="count-band">
-    <div class="count-item">
-      <div class="count-num">6</div>
-      <div class="count-label">Years of Hiking</div>
-    </div>
-    <div class="count-item">
-      <div class="count-num">120+</div>
-      <div class="count-label">Miles on Trail</div>
-    </div>
-    <div class="count-item">
-      <div class="count-num">4</div>
-      <div class="count-label">Dedicated Hikers</div>
-    </div>
-    <div class="count-item">
-      <div class="count-num">1</div>
-      <div class="count-label">Reason We Do It</div>
+  <!-- CHECK OUT THE PAST HIKES CALLOUT -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <linearGradient id="neonRainbow" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%"   stop-color="#FF1744"/>
+        <stop offset="20%"  stop-color="#FF7700"/>
+        <stop offset="40%"  stop-color="#FFD300"/>
+        <stop offset="60%"  stop-color="#00E676"/>
+        <stop offset="80%"  stop-color="#00B0FF"/>
+        <stop offset="100%" stop-color="#D500F9"/>
+      </linearGradient>
+    </defs>
+  </svg>
+  <div class="past-hikes-callout">
+    <img src="images/tss-logo.png" alt="Team Super Shea" class="callout-logo tss-logo-anim" />
+    <div class="callout-headline">Check Out the Past Hikes</div>
+    <div class="callout-sub">6 Years &bull; Every Step for Shea &bull; Scroll Down</div>
+    <div class="callout-chevrons" aria-hidden="true">
+      <svg class="callout-chevron" viewBox="0 0 24 24" fill="none" stroke="url(#neonRainbow)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="5 8 12 15 19 8"/></svg>
+      <svg class="callout-chevron" viewBox="0 0 24 24" fill="none" stroke="url(#neonRainbow)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="5 8 12 15 19 8"/></svg>
+      <svg class="callout-chevron" viewBox="0 0 24 24" fill="none" stroke="url(#neonRainbow)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="5 8 12 15 19 8"/></svg>
     </div>
   </div>
 
