@@ -1,0 +1,1403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Team Super Shea | Fighting Cystic Fibrosis One Step at a Time</title>
+  <meta name="description" content="Team Super Shea raises money for the Cystic Fibrosis Foundation through the Xtreme Hike. Join us in supporting Shea and everyone living with CF." />
+  <link rel="icon" href="images/tss-logo.png" type="image/png" />
+
+  <!-- Social share preview (Instagram, Facebook, iMessage, etc.) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Team Super Shea" />
+  <meta property="og:title" content="Team Super Shea | Fighting Cystic Fibrosis One Step at a Time" />
+  <meta property="og:description" content="Join Team Super Shea on the CFF Xtreme Hike. Every dollar helps us fight cystic fibrosis for Shea and everyone living with CF." />
+  <meta property="og:image" content="https://teamsupershea.com/images/team-yosemite.jpeg" />
+  <meta property="og:url" content="https://teamsupershea.com/" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Team Super Shea | Fighting Cystic Fibrosis" />
+  <meta name="twitter:description" content="Join Team Super Shea on the CFF Xtreme Hike. Help us fight cystic fibrosis for Shea." />
+  <meta name="twitter:image" content="https://teamsupershea.com/images/team-yosemite.jpeg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --blue:    #1B5BAA;
+      --blue-dk: #0D3F7A;
+      --teal:    #17A589;
+      --gold:    #F5A623;
+      --sky:     #E8F4FD;
+      --white:   #FFFFFF;
+      --gray:    #6B7280;
+      --dark:    #1A1A2E;
+      --radius:  16px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    /* ── LOGO ANIMATION ── */
+    @keyframes punch {
+      0%   { transform: translateY(0)    rotate(0deg)   scale(1);    }
+      15%  { transform: translateY(-14px) rotate(-4deg)  scale(1.08); }
+      30%  { transform: translateY(4px)   rotate(2deg)   scale(0.97); }
+      45%  { transform: translateY(-6px)  rotate(-1deg)  scale(1.03); }
+      60%  { transform: translateY(0)     rotate(0deg)   scale(1);    }
+      100% { transform: translateY(0)     rotate(0deg)   scale(1);    }
+    }
+
+    @keyframes punch-glow {
+      0%   { filter: drop-shadow(0 0 0px rgba(245,166,35,0));  }
+      15%  { filter: drop-shadow(0 0 16px rgba(245,166,35,0.7)); }
+      60%  { filter: drop-shadow(0 0 0px rgba(245,166,35,0));  }
+      100% { filter: drop-shadow(0 0 0px rgba(245,166,35,0));  }
+    }
+
+    .tss-logo-anim {
+      animation: punch 2.8s ease-in-out infinite, punch-glow 2.8s ease-in-out infinite;
+      display: inline-block;
+      transform-origin: bottom center;
+    }
+
+    .tss-logo-anim:hover {
+      animation-play-state: paused;
+      filter: drop-shadow(0 0 20px rgba(245,166,35,0.9));
+    }
+
+    body {
+      font-family: 'Nunito', sans-serif;
+      color: var(--dark);
+      background: var(--white);
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 32px;
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(27,91,170,0.1);
+    }
+
+    .nav-logo {
+      font-size: 1.25rem;
+      font-weight: 900;
+      color: var(--blue);
+      text-decoration: none;
+      letter-spacing: -0.5px;
+    }
+
+    .nav-logo span { color: var(--gold); }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--dark);
+      font-weight: 700;
+      font-size: 0.9rem;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--blue); }
+
+    .nav-donate {
+      background: var(--gold);
+      color: var(--dark) !important;
+      padding: 10px 22px;
+      border-radius: 50px;
+      font-weight: 800 !important;
+      transition: transform 0.2s, box-shadow 0.2s !important;
+    }
+
+    .nav-donate:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(245,166,35,0.4);
+      color: var(--dark) !important;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      background: linear-gradient(135deg, #0D3F7A 0%, #1B5BAA 40%, #17A589 100%);
+    }
+
+    .hero-bg-circles {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      pointer-events: none;
+    }
+
+    .hero-bg-circles::before,
+    .hero-bg-circles::after {
+      content: '';
+      position: absolute;
+      border-radius: 50%;
+      opacity: 0.12;
+    }
+
+    .hero-bg-circles::before {
+      width: 700px; height: 700px;
+      background: var(--gold);
+      top: -200px; right: -200px;
+    }
+
+    .hero-bg-circles::after {
+      width: 500px; height: 500px;
+      background: var(--teal);
+      bottom: -150px; left: -150px;
+    }
+
+    .rainbow-bar {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 6px;
+      background: linear-gradient(90deg,
+        #FF0000, #FF7700, #FFFF00, #00CC00, #0000FF, #8B00FF);
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+      max-width: 1100px;
+      width: 100%;
+      padding: 120px 40px 80px;
+    }
+
+    .hero-text h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.8rem, 6vw, 5rem);
+      font-weight: 900;
+      color: var(--white);
+      line-height: 1.05;
+      margin-bottom: 8px;
+    }
+
+    .hero-text h1 span {
+      color: var(--gold);
+    }
+
+    .hero-tagline {
+      font-size: 1.25rem;
+      color: rgba(255,255,255,0.85);
+      margin: 20px 0 12px;
+      font-weight: 600;
+      font-style: italic;
+    }
+
+    .hero-motto {
+      font-size: 1rem;
+      color: var(--gold);
+      font-weight: 800;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 36px;
+    }
+
+    .hero-cta-group {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--dark);
+      font-weight: 800;
+      font-size: 1.05rem;
+      padding: 16px 36px;
+      border-radius: 50px;
+      text-decoration: none;
+      transition: transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 4px 20px rgba(245,166,35,0.4);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 30px rgba(245,166,35,0.5);
+    }
+
+    .btn-secondary {
+      display: inline-block;
+      background: transparent;
+      color: var(--white);
+      font-weight: 700;
+      font-size: 1rem;
+      padding: 16px 32px;
+      border-radius: 50px;
+      text-decoration: none;
+      border: 2px solid rgba(255,255,255,0.5);
+      transition: border-color 0.2s, background 0.2s;
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--white);
+      background: rgba(255,255,255,0.1);
+    }
+
+    .hero-image-wrap {
+      display: flex;
+      justify-content: center;
+    }
+
+    .hero-photo-ring {
+      position: relative;
+      width: 340px;
+      height: 340px;
+    }
+
+    .hero-photo-ring::before {
+      content: '';
+      position: absolute;
+      inset: -12px;
+      border-radius: 50%;
+      background: conic-gradient(
+        #FF0000, #FF7700, #FFFF00, #00CC00, #0000FF, #8B00FF, #FF0000
+      );
+      animation: spin 8s linear infinite;
+    }
+
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    .hero-photo-ring img {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 8px solid var(--white);
+    }
+
+    .cff-badge {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      z-index: 2;
+      background: var(--white);
+      border-radius: 50px;
+      padding: 6px 14px;
+      font-size: 0.75rem;
+      font-weight: 800;
+      color: var(--blue);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+      white-space: nowrap;
+    }
+
+    /* ── STATS BAND ── */
+    .stats-band {
+      background: var(--blue-dk);
+      color: var(--white);
+      padding: 40px;
+      display: flex;
+      justify-content: center;
+      gap: 0;
+    }
+
+    .stat {
+      text-align: center;
+      padding: 0 50px;
+      border-right: 1px solid rgba(255,255,255,0.15);
+    }
+
+    .stat:last-child { border-right: none; }
+
+    .stat-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.8rem;
+      font-weight: 900;
+      color: var(--gold);
+      line-height: 1;
+    }
+
+    .stat-label {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: rgba(255,255,255,0.7);
+      margin-top: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    /* ── SECTIONS ── */
+    section {
+      padding: 90px 40px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    section.full-bleed {
+      max-width: 100%;
+      padding: 0;
+    }
+
+    .section-label {
+      font-size: 0.8rem;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 12px;
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 900;
+      line-height: 1.15;
+      margin-bottom: 20px;
+      color: var(--dark);
+    }
+
+    .section-title span { color: var(--blue); }
+
+    .section-body {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: #374151;
+      max-width: 680px;
+    }
+
+    /* ── SHEA'S STORY ── */
+    .story-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 70px;
+      align-items: center;
+    }
+
+    .story-image {
+      position: relative;
+    }
+
+    .story-image img {
+      width: 100%;
+      border-radius: var(--radius);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+    }
+
+    .story-quote {
+      position: absolute;
+      bottom: -24px;
+      right: -24px;
+      background: var(--gold);
+      color: var(--dark);
+      font-size: 1.05rem;
+      font-weight: 800;
+      font-style: italic;
+      padding: 20px 24px;
+      border-radius: var(--radius);
+      max-width: 220px;
+      line-height: 1.4;
+      box-shadow: 0 8px 30px rgba(245,166,35,0.3);
+    }
+
+    .story-text .section-body { margin-bottom: 20px; }
+
+    .cf-facts {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 28px;
+    }
+
+    .cf-fact {
+      background: var(--sky);
+      border-left: 4px solid var(--blue);
+      border-radius: 8px;
+      padding: 16px 18px;
+    }
+
+    .cf-fact-num {
+      font-size: 1.6rem;
+      font-weight: 900;
+      color: var(--blue);
+      line-height: 1;
+    }
+
+    .cf-fact-desc {
+      font-size: 0.82rem;
+      color: var(--gray);
+      margin-top: 4px;
+      font-weight: 600;
+    }
+
+    /* ── THE HIKE ── */
+    .hike-section {
+      background: linear-gradient(135deg, var(--sky) 0%, #EBF8F4 100%);
+    }
+
+    .hike-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 90px 40px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 70px;
+      align-items: center;
+    }
+
+    .hike-text .section-body { margin-bottom: 28px; }
+
+    .hike-highlights {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin: 28px 0;
+    }
+
+    .hike-highlight {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+    }
+
+    .hike-icon {
+      width: 44px;
+      height: 44px;
+      flex-shrink: 0;
+      border-radius: 50%;
+      background: var(--blue);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+    }
+
+    .hike-highlight-text strong {
+      display: block;
+      font-weight: 800;
+      color: var(--dark);
+      margin-bottom: 2px;
+    }
+
+    .hike-highlight-text span {
+      font-size: 0.9rem;
+      color: var(--gray);
+    }
+
+    .hike-image-wrap {
+      position: relative;
+    }
+
+    .hike-image-wrap img {
+      width: 100%;
+      border-radius: var(--radius);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+    }
+
+    .hike-year-badge {
+      position: absolute;
+      top: -16px;
+      left: -16px;
+      background: var(--blue);
+      color: var(--white);
+      font-weight: 900;
+      font-size: 1rem;
+      padding: 10px 20px;
+      border-radius: 50px;
+      box-shadow: 0 4px 16px rgba(27,91,170,0.35);
+    }
+
+    /* ── GALLERY ── */
+    .gallery-section {
+      padding: 80px 40px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .gallery-section .section-label { color: var(--teal); }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto auto;
+      gap: 16px;
+      margin-top: 40px;
+    }
+
+    .gallery-item {
+      border-radius: var(--radius);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .gallery-item.featured {
+      grid-column: 1 / -1;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s;
+    }
+
+    .gallery-item.featured img { max-height: 480px; }
+    .gallery-item:not(.featured) img { height: 280px; }
+
+    .gallery-item:hover img { transform: scale(1.04); }
+
+    .gallery-caption {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 100%);
+      color: white;
+      font-size: 0.82rem;
+      font-weight: 700;
+      padding: 28px 16px 12px;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    .gallery-item:hover .gallery-caption { opacity: 1; }
+
+    @media (max-width: 640px) {
+      .gallery-grid { grid-template-columns: 1fr; }
+      .gallery-item.featured { grid-column: 1; }
+      .gallery-item:not(.featured) img { height: 220px; }
+      .gallery-section { padding: 60px 24px; }
+    }
+
+    /* ── DONATE ── */
+    .donate-section {
+      background: linear-gradient(135deg, #0D3F7A 0%, #1B5BAA 50%, #17A589 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .donate-section::before {
+      content: '';
+      position: absolute;
+      width: 600px; height: 600px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.04);
+      top: -200px; right: -100px;
+    }
+
+    .donate-inner {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 100px 40px;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .donate-inner .section-label { color: var(--gold); }
+
+    .donate-inner .section-title { color: var(--white); margin-bottom: 16px; }
+    .donate-inner .section-title span { color: var(--gold); }
+
+    .donate-inner .section-body {
+      color: rgba(255,255,255,0.8);
+      margin: 0 auto 40px;
+      text-align: center;
+    }
+
+    .donate-amount-row {
+      display: flex;
+      gap: 14px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 32px;
+    }
+
+    .amount-chip {
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.25);
+      color: var(--white);
+      font-weight: 800;
+      font-size: 1rem;
+      padding: 12px 24px;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: background 0.2s, border-color 0.2s;
+    }
+
+    .amount-chip:hover,
+    .amount-chip.featured {
+      background: var(--gold);
+      border-color: var(--gold);
+      color: var(--dark);
+    }
+
+    .donate-btn-large {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--dark);
+      font-weight: 900;
+      font-size: 1.2rem;
+      padding: 20px 56px;
+      border-radius: 50px;
+      text-decoration: none;
+      transition: transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 6px 30px rgba(245,166,35,0.5);
+      letter-spacing: 0.3px;
+    }
+
+    .donate-btn-large:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(245,166,35,0.6);
+    }
+
+    .donate-secure {
+      margin-top: 20px;
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.55);
+      font-weight: 600;
+    }
+
+    /* ── TEAM SECTION ── */
+    .team-section {
+      background: var(--dark);
+      padding: 90px 40px;
+    }
+
+    .team-section-inner {
+      max-width: 860px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .team-section .section-label { color: var(--gold); }
+
+    .team-member--captain {
+      border-color: rgba(245,166,35,0.4);
+      background: rgba(245,166,35,0.06);
+    }
+
+    .captain-badge {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--dark);
+      font-size: 0.7rem;
+      font-weight: 900;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      padding: 2px 8px;
+      border-radius: 20px;
+      vertical-align: middle;
+      margin-right: 4px;
+    }
+
+    .team-section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.8rem, 6vw, 4.5rem);
+      font-weight: 900;
+      color: var(--white);
+      letter-spacing: -1px;
+      line-height: 1;
+      margin-bottom: 56px;
+    }
+
+    .team-list {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .team-member {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: var(--radius);
+      padding: 24px 32px;
+      transition: background 0.2s, border-color 0.2s;
+    }
+
+    .team-member:hover {
+      background: rgba(255,255,255,0.08);
+      border-color: rgba(245,166,35,0.3);
+    }
+
+    .team-member-left {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      text-align: left;
+    }
+
+    .team-member-number {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      font-weight: 900;
+      color: var(--gold);
+      opacity: 0.6;
+      width: 28px;
+      flex-shrink: 0;
+    }
+
+    .team-member-avatar {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--blue) 0%, var(--teal) 100%);
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      color: white;
+      overflow: hidden;
+    }
+
+    .team-member-avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .team-member-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1.1;
+    }
+
+    .team-member-tagline {
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.4);
+      font-weight: 600;
+      margin-top: 3px;
+    }
+
+    .team-donate-btn {
+      display: inline-block;
+      background: transparent;
+      color: var(--gold);
+      font-weight: 800;
+      font-size: 0.85rem;
+      padding: 10px 22px;
+      border-radius: 50px;
+      text-decoration: none;
+      border: 1.5px solid var(--gold);
+      transition: background 0.2s, color 0.2s;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .team-donate-btn:hover {
+      background: var(--gold);
+      color: var(--dark);
+    }
+
+    @media (max-width: 600px) {
+      .team-member {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+        padding: 20px 24px;
+      }
+      .team-donate-btn { align-self: flex-start; }
+      .team-section { padding: 60px 24px; }
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--dark);
+      color: rgba(255,255,255,0.6);
+      padding: 48px 40px;
+      text-align: center;
+    }
+
+    .footer-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      font-weight: 900;
+      color: var(--white);
+      margin-bottom: 12px;
+    }
+
+    .footer-logo span { color: var(--gold); }
+
+    .footer-links {
+      display: flex;
+      gap: 24px;
+      justify-content: center;
+      margin: 20px 0;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      color: rgba(255,255,255,0.5);
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 600;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover { color: var(--white); }
+
+    .footer-social {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      margin: 16px 0 0;
+    }
+
+    .footer-social a {
+      color: rgba(255,255,255,0.45);
+      transition: color 0.2s;
+    }
+
+    .footer-social a:hover { color: var(--white); }
+
+    .footer-rainbow {
+      height: 4px;
+      background: linear-gradient(90deg,
+        #FF0000, #FF7700, #FFFF00, #00CC00, #0000FF, #8B00FF);
+      border-radius: 2px;
+      max-width: 200px;
+      margin: 24px auto 0;
+    }
+
+    .footer-copy {
+      font-size: 0.8rem;
+      margin-top: 20px;
+    }
+
+    /* ── SUPPORTERS ── */
+    .supporters-section {
+      background: var(--sky);
+      padding: 80px 40px;
+      text-align: center;
+    }
+
+    .supporters-inner {
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    .supporters-section .section-label { color: var(--teal); }
+
+    .supporters-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+      margin-top: 48px;
+    }
+
+    .supporter-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 40px 32px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+      transition: transform 0.2s, box-shadow 0.2s;
+      text-align: left;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .supporter-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 4px;
+    }
+
+    .supporter-card.gym::before  { background: linear-gradient(90deg, var(--blue), var(--teal)); }
+    .supporter-card.brew::before { background: linear-gradient(90deg, #C0392B, #E67E22); }
+
+    .supporter-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+    }
+
+    .supporter-icon {
+      font-size: 2.4rem;
+      margin-bottom: 16px;
+      display: block;
+    }
+
+    .supporter-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--dark);
+      margin-bottom: 4px;
+    }
+
+    .supporter-location {
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 14px;
+    }
+
+    .supporter-desc {
+      font-size: 0.95rem;
+      line-height: 1.7;
+      color: var(--gray);
+    }
+
+    .supporter-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 14px;
+      margin-bottom: 4px;
+    }
+
+    .supporter-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--blue);
+      text-decoration: none;
+      background: var(--sky);
+      padding: 5px 12px;
+      border-radius: 20px;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .supporter-link:hover {
+      background: var(--blue);
+      color: var(--white);
+    }
+
+    .supporter-heart {
+      display: inline-block;
+      margin-top: 18px;
+      font-size: 0.8rem;
+      font-weight: 800;
+      color: var(--blue);
+      background: var(--sky);
+      padding: 5px 14px;
+      border-radius: 20px;
+    }
+
+    @media (max-width: 640px) {
+      .supporters-grid { grid-template-columns: 1fr; }
+      .supporters-section { padding: 60px 24px; }
+    }
+
+    /* ── MOBILE ── */
+    @media (max-width: 768px) {
+      nav { padding: 14px 20px; }
+      .nav-links { display: none; }
+
+      .hero-inner {
+        grid-template-columns: 1fr;
+        padding: 100px 24px 60px;
+        text-align: center;
+      }
+
+      .hero-image-wrap { order: -1; }
+      .hero-photo-ring { width: 240px; height: 240px; }
+
+      .hero-cta-group { justify-content: center; }
+
+      .stats-band {
+        flex-direction: column;
+        gap: 28px;
+        padding: 40px 24px;
+      }
+
+      .stat { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.15); padding: 0 0 28px; }
+      .stat:last-child { border-bottom: none; padding-bottom: 0; }
+
+      section { padding: 60px 24px; }
+
+      .story-grid,
+      .hike-inner { grid-template-columns: 1fr; gap: 40px; }
+
+      .story-quote { position: static; margin-top: 16px; max-width: 100%; }
+
+      .cf-facts { grid-template-columns: 1fr; }
+
+      .hike-inner { padding: 60px 24px; }
+
+      .donate-inner { padding: 70px 24px; }
+
+      footer { padding: 40px 24px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="#" class="nav-logo">
+      <img src="images/tss-logo.png" alt="Team Super Shea logo" class="tss-logo-anim" style="height:38px; width:auto; vertical-align:middle; margin-right:8px;" />Team <span>Super Shea</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#story">Shea's Story</a></li>
+      <li><a href="#hike">The Hike</a></li>
+      <li><a href="#team">Our Team</a></li>
+      <li><a href="past-events.html">Past Hikes</a></li>
+      <li><a href="https://www.instagram.com/ariane_like_maryanne?igsh=MW5ydGxnMnEwazdraA==" target="_blank" rel="noopener" aria-label="Ariane on Instagram">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+      </a></li>
+      <li><a href="https://linktr.ee/ArianeLucas?utm_source=linktree_profile_share&ltsid=01f92b5c-df3f-49eb-8ffe-0dbfefe08ae5" target="_blank" rel="noopener" aria-label="Ariane's Linktree">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="vertical-align:middle"><path d="M7.953 15.066c-.08.163-.08.324-.08.486.08.517.528.897 1.052.897h2.172v4.716c0 .57.41 1.067.974 1.14a1.14 1.14 0 0 0 1.222-1.14v-4.716h2.252a1.07 1.07 0 0 0 1.052-.897c0-.162 0-.323-.08-.486l-3.864-7.438a1.02 1.02 0 0 0-.892-.546 1.02 1.02 0 0 0-.892.546L7.953 15.066zm3.945-12.01L9.344 5.61a.54.54 0 0 0 0 .762l2.554 2.554-2.554 2.555a.54.54 0 0 0 0 .761l.677.677a.54.54 0 0 0 .762 0L12 10.844l1.217 1.075a.54.54 0 0 0 .762 0l.677-.677a.54.54 0 0 0 0-.761L12.1 8.926l2.556-2.554a.54.54 0 0 0 0-.762l-2.556-2.554a.54.54 0 0 0-.762 0l-.677.677a.54.54 0 0 0 0 .762l1.076 1.216-1.076 1.055-1.075-1.055a.54.54 0 0 0-.762 0z"/></svg>
+      </a></li>
+      <li><a href="#donate" class="nav-donate">Donate Now</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="hero-bg-circles"></div>
+    <div class="hero-inner">
+      <div class="hero-text">
+        <div class="section-label" style="color:rgba(255,255,255,0.6);">Cystic Fibrosis Foundation &bull; Xtreme Hike</div>
+        <div style="display:flex; align-items:center; gap:20px; flex-wrap:wrap;">
+          <img src="images/tss-logo.png" alt="Team Super Shea superhero logo" class="tss-logo-anim" style="height:110px; width:auto; filter: invert(1) sepia(1) saturate(3) hue-rotate(5deg) brightness(1.1);" />
+          <h1>Team<br /><span>Super Shea</span></h1>
+        </div>
+        <p class="hero-tagline">Fighting CF one step — and one summit — at a time.</p>
+        <p class="hero-motto">No Rain &bull; No Rainbow</p>
+        <div class="hero-cta-group">
+          <a href="https://fundraise.cff.org/yosemite2026/teamsupershea25" target="_blank" rel="noopener" class="btn-primary">Donate to Our Team</a>
+          <a href="#story" class="btn-secondary">Meet Shea</a>
+        </div>
+      </div>
+      <div class="hero-image-wrap">
+        <div class="hero-photo-ring">
+          <img loading="lazy" decoding="async" src="images/shea-pool.jpeg" alt="Shea smiling through a rainbow pool float that reads No Rain No Rainbow" />
+          <div class="cff-badge">Fighting CF Since Day 1</div>
+        </div>
+      </div>
+    </div>
+    <div class="rainbow-bar"></div>
+  </header>
+
+  <!-- STATS BAND -->
+  <div class="stats-band">
+    <div class="stat">
+      <div class="stat-num">30K+</div>
+      <div class="stat-label">Americans living with CF</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">Year 6</div>
+      <div class="stat-label">Xtreme Hike &bull; Yosemite 2026</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">100%</div>
+      <div class="stat-label">of donations go to CFF research</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">1</div>
+      <div class="stat-label">Amazing kid named Shea</div>
+    </div>
+  </div>
+
+  <!-- SHEA'S STORY -->
+  <section id="story">
+    <div class="story-grid">
+      <div class="story-image">
+        <img loading="lazy" decoding="async" src="images/shea-pool.jpeg" alt="Shea in the pool with a rainbow float" />
+        <div class="story-quote">"No Rain, No Rainbow" — that's our Shea.</div>
+      </div>
+      <div class="story-text">
+        <div class="section-label">Why We Hike</div>
+        <h2 class="section-title">Meet <span>Shea</span></h2>
+        <p class="section-body">
+          Shea is the heart of everything we do. Living with Cystic Fibrosis means navigating
+          daily treatments, hospital visits, and challenges most kids never face — yet Shea
+          faces every single day with a smile that could light up any room (and any pool).
+        </p>
+        <p class="section-body">
+          Cystic Fibrosis is a progressive genetic disease that primarily affects the lungs
+          and digestive system. There is no cure — yet. Every dollar raised through the
+          Cystic Fibrosis Foundation brings researchers one step closer to a world without CF.
+        </p>
+        <div class="cf-facts">
+          <div class="cf-fact">
+            <div class="cf-fact-num">1 in 31</div>
+            <div class="cf-fact-desc">Americans carry the CF gene</div>
+          </div>
+          <div class="cf-fact">
+            <div class="cf-fact-num">40,000</div>
+            <div class="cf-fact-desc">people live with CF worldwide</div>
+          </div>
+          <div class="cf-fact">
+            <div class="cf-fact-num">$130M+</div>
+            <div class="cf-fact-desc">CFF invests in research yearly</div>
+          </div>
+          <div class="cf-fact">
+            <div class="cf-fact-num">70%</div>
+            <div class="cf-fact-desc">of CF patients diagnosed by age 2</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- THE HIKE -->
+  <div class="hike-section full-bleed">
+    <div class="hike-inner" id="hike">
+      <div class="hike-text">
+        <div class="section-label">The Challenge</div>
+        <h2 class="section-title">Xtreme Hike <span>Yosemite 2026</span></h2>
+        <p class="section-body">
+          Our team laces up their boots and takes on one of the most breathtaking — and
+          grueling — routes in the country, all in Shea's honor. The Xtreme Hike is not
+          a casual walk in the park. It's a 20+ mile challenge with serious elevation, and
+          every single step is powered by love.
+        </p>
+        <div class="hike-highlights">
+          <div class="hike-highlight">
+            <div class="hike-icon">🏔️</div>
+            <div class="hike-highlight-text">
+              <strong>Yosemite National Park</strong>
+              <span>One of America's most iconic landscapes</span>
+            </div>
+          </div>
+          <div class="hike-highlight">
+            <div class="hike-icon">👟</div>
+            <div class="hike-highlight-text">
+              <strong>20+ Miles in a Single Day</strong>
+              <span>Challenging terrain, massive elevation gain</span>
+            </div>
+          </div>
+          <div class="hike-highlight">
+            <div class="hike-icon">💙</div>
+            <div class="hike-highlight-text">
+              <strong>Every Step for Shea</strong>
+              <span>And for every person living with CF</span>
+            </div>
+          </div>
+          <div class="hike-highlight">
+            <div class="hike-icon">🌈</div>
+            <div class="hike-highlight-text">
+              <strong>No Rain, No Rainbow</strong>
+              <span>Pushing through when it gets tough</span>
+            </div>
+          </div>
+        </div>
+        <a href="https://fundraise.cff.org/yosemite2026/teamsupershea25" target="_blank" rel="noopener" class="btn-primary" style="background:var(--blue); color:white; box-shadow: 0 4px 20px rgba(27,91,170,0.35);">
+          Support the Team's Hike
+        </a>
+      </div>
+      <div class="hike-image-wrap">
+        <div class="hike-year-badge">Yosemite 2026 Team</div>
+        <img loading="lazy" decoding="async" src="images/team-yosemite.jpeg" alt="Team Super Shea at Yosemite holding a Cystic Fibrosis Foundation Thank You banner" />
+      </div>
+    </div>
+  </div>
+
+  <!-- GALLERY -->
+  <section class="gallery-section">
+    <div class="section-label">From the Trail</div>
+    <h2 class="section-title">Life on the <span>Mountain</span></h2>
+    <div class="gallery-grid">
+
+      <div class="gallery-item featured">
+        <img loading="lazy" decoding="async" src="images/gallery-3.jpeg" alt="Team Super Shea at Tunnel View, Yosemite Valley at sunset" />
+        <div class="gallery-caption">Tunnel View — Yosemite Valley at sunset</div>
+      </div>
+
+      <div class="gallery-item">
+        <img loading="lazy" decoding="async" src="images/gallery-1.jpeg" alt="Team Super Shea at Half Dome, Yosemite" />
+        <div class="gallery-caption">Half Dome — Yosemite</div>
+      </div>
+
+      <div class="gallery-item">
+        <img loading="lazy" decoding="async" src="images/gallery-2.jpeg" alt="Team hiking through the Yosemite forest trail" />
+        <div class="gallery-caption">On the trail through the forest</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- DONATE -->
+  <div class="donate-section full-bleed" id="donate">
+    <div class="donate-inner">
+      <div class="section-label">Make a Difference</div>
+      <h2 class="section-title">Every Dollar <span>Counts</span></h2>
+      <p class="section-body">
+        Your donation goes directly to the Cystic Fibrosis Foundation to fund life-changing
+        research and support for families like ours. No amount is too small — and every dollar
+        is a step closer to a cure for Shea and the thousands of others fighting CF every day.
+      </p>
+      <div class="donate-amount-row">
+        <div class="amount-chip">$25</div>
+        <div class="amount-chip featured">$50</div>
+        <div class="amount-chip">$100</div>
+        <div class="amount-chip">$250</div>
+        <div class="amount-chip">$500</div>
+      </div>
+      <a href="https://fundraise.cff.org/yosemite2026/teamsupershea25" target="_blank" rel="noopener" class="donate-btn-large">
+        Donate to Team Super Shea
+      </a>
+      <p class="donate-secure">
+        Secure donation processed by the Cystic Fibrosis Foundation &bull; 501(c)(3) nonprofit
+      </p>
+    </div>
+  </div>
+
+  <!-- TEAM -->
+  <div class="team-section full-bleed" id="team">
+    <div class="team-section-inner">
+      <div class="section-label">Yosemite 2026</div>
+      <h2 class="team-section-title">THE TEAM</h2>
+      <div class="team-list">
+
+        <div class="team-member team-member--captain">
+          <div class="team-member-left">
+            <div class="team-member-number">01</div>
+            <div class="team-member-avatar" style="background: linear-gradient(135deg, var(--gold) 0%, #e08e00 100%); color: var(--dark);">A</div>
+            <div>
+              <div class="team-member-name">Ariane Lucas</div>
+              <div class="team-member-tagline">
+                <span class="captain-badge">Team Captain</span> &bull; Xtreme Hike Year 6
+              </div>
+            </div>
+          </div>
+          <a href="https://fundraise.cff.org/yosemite2026/Donate/Index/2128397?submit=Continue" target="_blank" rel="noopener" class="team-donate-btn">Donate for Ariane</a>
+        </div>
+
+        <div class="team-member">
+          <div class="team-member-left">
+            <div class="team-member-number">02</div>
+            <div class="team-member-avatar">C</div>
+            <div>
+              <div class="team-member-name">Cathy Lucas</div>
+              <div class="team-member-tagline">Hiker &bull; Team Super Shea</div>
+            </div>
+          </div>
+          <a href="https://fundraise.cff.org/yosemite2026/Donate/Index/2128397?submit=Continue" target="_blank" rel="noopener" class="team-donate-btn">Donate for Cathy</a>
+        </div>
+
+        <div class="team-member">
+          <div class="team-member-left">
+            <div class="team-member-number">03</div>
+            <div class="team-member-avatar">M</div>
+            <div>
+              <div class="team-member-name">Michael Rush</div>
+              <div class="team-member-tagline">Hiker &bull; Team Super Shea</div>
+            </div>
+          </div>
+          <a href="https://fundraise.cff.org/yosemite2026/Donate/Index/2139960?submit=Continue" target="_blank" rel="noopener" class="team-donate-btn">Donate for Michael</a>
+        </div>
+
+        <div class="team-member">
+          <div class="team-member-left">
+            <div class="team-member-number">04</div>
+            <div class="team-member-avatar">J</div>
+            <div>
+              <div class="team-member-name">Jen Rush</div>
+              <div class="team-member-tagline">Hiker &bull; Team Super Shea</div>
+            </div>
+          </div>
+          <a href="https://fundraise.cff.org/yosemite2026/Member/MyPage/10153564/Jen-Rush" target="_blank" rel="noopener" class="team-donate-btn">Donate for Jen</a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- SUPPORTERS -->
+  <div class="supporters-section full-bleed">
+    <div class="supporters-inner">
+      <div class="section-label">Our Community Champions</div>
+      <h2 class="section-title">Powered by <span>People Who Care</span></h2>
+      <p class="section-body" style="margin: 0 auto; text-align: center;">
+        Team Super Shea doesn't do this alone. These incredible businesses have shown
+        up for Shea year after year — and we are forever grateful.
+      </p>
+      <div class="supporters-grid">
+
+        <div class="supporter-card gym">
+          <span class="supporter-icon">🏋️</span>
+          <div class="supporter-name">VNTRfit</div>
+          <div class="supporter-location">📍 Rancho Santa Margarita, CA</div>
+          <p class="supporter-desc">
+            More than a gym — VNTRfit is family. Their community has rallied behind
+            Team Super Shea from the start, pushing us harder and cheering us louder
+            every single year. We hike because they train us to never quit.
+          </p>
+          <div class="supporter-links">
+            <a href="https://vntrfitness.wodify.com/OnlineSalesPage/Main?q=Classes%7CLocationId%3D10832%26OnlineMembershipId%3D252861%26ProgramId%3D126334%26utm_source%3Dig%26utm_medium%3Dsocial%26utm_content%3Dlink_in_bio%26fbclid%3DPAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQPMTI0MDI0NTc0Mjg3NDE0AAGnp-ZusM-gMrejgWtj-1SJBUi9Xtid6OdcgAj5IITFB3OLPPDEW6IPS3KKWJA_aem_UDtYjrB9Eg-c1BmEGEAaJg&utm_source=ig&utm_medium=social&utm_content=link_in_bio" target="_blank" rel="noopener" class="supporter-link">🌐 vntrfitness.com</a>
+            <a href="https://www.instagram.com/vntrfitness?igsh=bXJ0czBobXM3MXZt" target="_blank" rel="noopener" class="supporter-link">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle; margin-right:3px"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>@vntrfitness
+            </a>
+          </div>
+          <span class="supporter-heart">Thank you, VNTRfit 💙</span>
+        </div>
+
+        <div class="supporter-card brew">
+          <span class="supporter-icon">🍺</span>
+          <div class="supporter-name">Unsung Brewing Co.</div>
+          <div class="supporter-location">📍 Anaheim, CA</div>
+          <p class="supporter-desc">
+            Great beer, even greater hearts. Unsung Brewing has been one of Team
+            Super Shea's most generous supporters — turning good times into a force
+            for change and helping us raise real money for CF research.
+          </p>
+          <div class="supporter-links">
+            <a href="https://www.unsungbrewing.com/" target="_blank" rel="noopener" class="supporter-link">🌐 unsungbrewing.com</a>
+            <a href="https://www.instagram.com/unsungbrewing?igsh=MW9sOXRqYTJsemFhcA==" target="_blank" rel="noopener" class="supporter-link">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle; margin-right:3px"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>@unsungbrewing
+            </a>
+          </div>
+          <span class="supporter-heart">Thank you, Unsung Brewing 💙</span>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <img src="images/tss-logo.png" alt="Team Super Shea logo" class="tss-logo-anim" style="height:70px; width:auto; margin-bottom:12px; opacity:0.85;" />
+    <div class="footer-logo">Team <span>Super Shea</span></div>
+    <p style="font-size:0.9rem; max-width:480px; margin:0 auto 16px;">
+      Hiking for hope. Fighting for a cure. Celebrating Shea every step of the way.
+    </p>
+    <div class="footer-links">
+      <a href="#story">Shea's Story</a>
+      <a href="#hike">The Hike</a>
+      <a href="#team">Our Team</a>
+      <a href="past-events.html">Past Hikes</a>
+      <a href="https://fundraise.cff.org/yosemite2026/teamsupershea25" target="_blank" rel="noopener">Donate</a>
+      <a href="https://www.cff.org" target="_blank" rel="noopener">CFF.org</a>
+    </div>
+    <div class="footer-social">
+      <a href="https://www.instagram.com/ariane_like_maryanne?igsh=MW5ydGxnMnEwazdraA==" target="_blank" rel="noopener" aria-label="Ariane on Instagram">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+      </a>
+      <a href="https://linktr.ee/ArianeLucas?utm_source=linktree_profile_share&ltsid=01f92b5c-df3f-49eb-8ffe-0dbfefe08ae5" target="_blank" rel="noopener" aria-label="Ariane's Linktree">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M7.953 15.066c-.08.163-.08.324-.08.486.08.517.528.897 1.052.897h2.172v4.716c0 .57.41 1.067.974 1.14a1.14 1.14 0 0 0 1.222-1.14v-4.716h2.252a1.07 1.07 0 0 0 1.052-.897c0-.162 0-.323-.08-.486l-3.864-7.438a1.02 1.02 0 0 0-.892-.546 1.02 1.02 0 0 0-.892.546L7.953 15.066zm3.945-12.01L9.344 5.61a.54.54 0 0 0 0 .762l2.554 2.554-2.554 2.555a.54.54 0 0 0 0 .761l.677.677a.54.54 0 0 0 .762 0L12 10.844l1.217 1.075a.54.54 0 0 0 .762 0l.677-.677a.54.54 0 0 0 0-.761L12.1 8.926l2.556-2.554a.54.54 0 0 0 0-.762l-2.556-2.554a.54.54 0 0 0-.762 0l-.677.677a.54.54 0 0 0 0 .762l1.076 1.216-1.076 1.055-1.075-1.055a.54.54 0 0 0-.762 0z"/></svg>
+      </a>
+    </div>
+    <div class="footer-rainbow"></div>
+    <p class="footer-copy">
+      &copy; 2026 Team Super Shea &bull; In support of the Cystic Fibrosis Foundation
+    </p>
+  </footer>
+
+</body>
+</html>
