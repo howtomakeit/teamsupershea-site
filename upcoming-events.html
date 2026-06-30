@@ -1,0 +1,1080 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2026 Events | Team Super Shea</title>
+  <meta name="description" content="Every event is a chance to fight for Shea and every person living with CF. See all Team Super Shea 2026 upcoming events, hikes, fundraisers, and community activities." />
+  <link rel="icon" href="images/tss-logo.png" type="image/png" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Team Super Shea" />
+  <meta property="og:title" content="2026 Events | Team Super Shea" />
+  <meta property="og:description" content="Every event is a chance to fight for Shea and every person living with CF. See all Team Super Shea 2026 upcoming events." />
+  <meta property="og:image" content="https://teamsupershea.com/images/team-yosemite.jpeg" />
+  <meta property="og:url" content="https://teamsupershea.com/upcoming-events.html" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="2026 Events | Team Super Shea" />
+  <meta name="twitter:description" content="Every event is a chance to fight for Shea and every person living with CF." />
+  <meta name="twitter:image" content="https://teamsupershea.com/images/team-yosemite.jpeg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --blue:    #1B5BAA;
+      --blue-dk: #0D3F7A;
+      --teal:    #17A589;
+      --gold:    #F5A623;
+      --sky:     #E8F4FD;
+      --white:   #FFFFFF;
+      --gray:    #6B7280;
+      --dark:    #1A1A2E;
+      --radius:  16px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    /* ── LOGO ANIMATION ── */
+    @keyframes punch {
+      0%   { transform: translateY(0)     rotate(0deg)   scale(1);    }
+      15%  { transform: translateY(-14px) rotate(-4deg)  scale(1.08); }
+      30%  { transform: translateY(4px)   rotate(2deg)   scale(0.97); }
+      45%  { transform: translateY(-6px)  rotate(-1deg)  scale(1.03); }
+      60%  { transform: translateY(0)     rotate(0deg)   scale(1);    }
+      100% { transform: translateY(0)     rotate(0deg)   scale(1);    }
+    }
+
+    @keyframes punch-glow {
+      0%   { filter: drop-shadow(0 0 0px  rgba(245,166,35,0));   }
+      15%  { filter: drop-shadow(0 0 16px rgba(245,166,35,0.7)); }
+      60%  { filter: drop-shadow(0 0 0px  rgba(245,166,35,0));   }
+      100% { filter: drop-shadow(0 0 0px  rgba(245,166,35,0));   }
+    }
+
+    .tss-logo-anim {
+      animation: punch 2.8s ease-in-out infinite, punch-glow 2.8s ease-in-out infinite;
+      display: inline-block;
+      transform-origin: bottom center;
+    }
+
+    .tss-logo-anim:hover {
+      animation-play-state: paused;
+      filter: drop-shadow(0 0 20px rgba(245,166,35,0.9));
+    }
+
+    body {
+      font-family: 'Nunito', sans-serif;
+      color: var(--dark);
+      background: var(--white);
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 32px;
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(27,91,170,0.1);
+    }
+
+    .nav-logo {
+      font-size: 1.25rem;
+      font-weight: 900;
+      color: var(--blue);
+      text-decoration: none;
+      letter-spacing: -0.5px;
+    }
+
+    .nav-logo span { color: var(--gold); }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+      align-items: center;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--dark);
+      font-weight: 700;
+      font-size: 0.9rem;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--blue); }
+
+    .nav-active {
+      color: var(--blue) !important;
+      border-bottom: 2px solid var(--blue);
+      padding-bottom: 2px;
+    }
+
+    .nav-donate {
+      background: var(--gold);
+      color: var(--dark) !important;
+      padding: 10px 22px;
+      border-radius: 50px;
+      font-weight: 800 !important;
+      transition: transform 0.2s, box-shadow 0.2s !important;
+    }
+
+    .nav-donate:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(245,166,35,0.4);
+      color: var(--dark) !important;
+    }
+
+    /* ── HAMBURGER ── */
+    .nav-hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 8px;
+      z-index: 200;
+    }
+
+    .nav-hamburger span {
+      display: block;
+      width: 24px;
+      height: 2.5px;
+      background: var(--dark);
+      border-radius: 2px;
+      transition: transform 0.3s, opacity 0.3s;
+    }
+
+    .nav-hamburger.open span:nth-child(1) { transform: translateY(7.5px) rotate(45deg); }
+    .nav-hamburger.open span:nth-child(2) { opacity: 0; }
+    .nav-hamburger.open span:nth-child(3) { transform: translateY(-7.5px) rotate(-45deg); }
+
+    /* ── MOBILE MENU ── */
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(255,255,255,0.98);
+      backdrop-filter: blur(16px);
+      padding: 90px 36px 40px;
+      z-index: 99;
+      flex-direction: column;
+      overflow-y: auto;
+    }
+
+    .mobile-menu.open { display: flex; }
+
+    .mobile-menu-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .mobile-menu-links li {
+      border-bottom: 1px solid rgba(0,0,0,0.07);
+    }
+
+    .mobile-menu-links a {
+      display: block;
+      padding: 18px 0;
+      text-decoration: none;
+      color: var(--dark);
+      font-weight: 700;
+      font-size: 1.2rem;
+      transition: color 0.2s;
+    }
+
+    .mobile-menu-links a:hover { color: var(--blue); }
+
+    .mobile-menu-social {
+      display: flex;
+      gap: 20px;
+      padding: 18px 0;
+      border-bottom: 1px solid rgba(0,0,0,0.07);
+    }
+
+    .mobile-menu-social a {
+      color: var(--dark);
+      transition: color 0.2s;
+    }
+
+    .mobile-menu-social a:hover { color: var(--blue); }
+
+    .mobile-menu-donate {
+      display: block;
+      margin-top: 28px;
+      background: var(--gold);
+      color: var(--dark);
+      font-weight: 900;
+      padding: 16px 32px;
+      border-radius: 50px;
+      text-decoration: none;
+      text-align: center;
+      font-size: 1.1rem;
+      box-shadow: 0 4px 20px rgba(245,166,35,0.4);
+    }
+
+    /* ── HERO ── */
+    .hero {
+      position: relative;
+      min-height: 60vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      background: linear-gradient(135deg, #0D3F7A 0%, #1B5BAA 40%, #17A589 100%);
+    }
+
+    .hero-bg-circles {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      pointer-events: none;
+    }
+
+    .hero-bg-circles::before,
+    .hero-bg-circles::after {
+      content: '';
+      position: absolute;
+      border-radius: 50%;
+      opacity: 0.12;
+    }
+
+    .hero-bg-circles::before {
+      width: 700px; height: 700px;
+      background: var(--gold);
+      top: -200px; right: -200px;
+    }
+
+    .hero-bg-circles::after {
+      width: 500px; height: 500px;
+      background: var(--teal);
+      bottom: -150px; left: -150px;
+    }
+
+    .rainbow-bar {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 6px;
+      background: linear-gradient(90deg, #FF0000, #FF7700, #FFFF00, #00CC00, #0000FF, #8B00FF);
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      max-width: 760px;
+      width: 100%;
+      padding: 120px 40px 80px;
+    }
+
+    .hero-section-label {
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.6);
+      margin-bottom: 16px;
+    }
+
+    .hero-inner h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.8rem, 7vw, 5rem);
+      font-weight: 900;
+      color: var(--white);
+      line-height: 1.05;
+      margin-bottom: 20px;
+    }
+
+    .hero-inner h1 span { color: var(--gold); }
+
+    .hero-subtitle {
+      font-size: 1.15rem;
+      color: rgba(255,255,255,0.82);
+      font-weight: 600;
+      max-width: 540px;
+      margin: 0 auto;
+      line-height: 1.65;
+    }
+
+    /* ── FILTER TABS ── */
+    .filter-bar-wrap {
+      position: sticky;
+      top: 67px;
+      z-index: 50;
+      background: var(--white);
+      border-bottom: 1px solid rgba(27,91,170,0.1);
+      box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+    }
+
+    .filter-bar {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      justify-content: center;
+      padding: 16px 24px;
+      max-width: 900px;
+      margin: 0 auto;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+
+    .filter-bar::-webkit-scrollbar { display: none; }
+
+    .filter-tab {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 9px 20px;
+      border-radius: 50px;
+      border: 2px solid rgba(27,91,170,0.15);
+      background: transparent;
+      color: var(--gray);
+      font-family: 'Nunito', sans-serif;
+      font-weight: 700;
+      font-size: 0.88rem;
+      cursor: pointer;
+      transition: all 0.2s;
+      white-space: nowrap;
+    }
+
+    .filter-tab:hover {
+      border-color: var(--blue);
+      color: var(--blue);
+    }
+
+    .filter-tab.active {
+      background: var(--blue);
+      color: var(--white);
+      border-color: var(--blue);
+      box-shadow: 0 4px 14px rgba(27,91,170,0.28);
+    }
+
+    .filter-tab .tab-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .filter-tab[data-filter="all"]         .tab-dot { background: linear-gradient(135deg, var(--blue), var(--teal)); }
+    .filter-tab[data-filter="hike"]        .tab-dot { background: var(--teal); }
+    .filter-tab[data-filter="fitness"]     .tab-dot { background: var(--blue); }
+    .filter-tab[data-filter="fundraiser"]  .tab-dot { background: var(--gold); }
+    .filter-tab[data-filter="community"]   .tab-dot { background: #9B59B6; }
+
+    .filter-tab.active .tab-dot { background: rgba(255,255,255,0.7); }
+
+    /* ── EVENTS GRID ── */
+    .events-section {
+      padding: 64px 24px 80px;
+      background: #F4F6FA;
+    }
+
+    .events-inner {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .events-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 28px;
+    }
+
+    /* ── RAINBOW BORDER ANIMATION ── */
+    @keyframes rainbow-border {
+      0%   { border-color: #FF1744; box-shadow: 0 8px 40px rgba(255,23,68,0.25);  }
+      16%  { border-color: #FF7700; box-shadow: 0 8px 40px rgba(255,119,0,0.25);  }
+      33%  { border-color: #FFD300; box-shadow: 0 8px 40px rgba(255,211,0,0.25);  }
+      50%  { border-color: #00E676; box-shadow: 0 8px 40px rgba(0,230,118,0.25);  }
+      66%  { border-color: #00B0FF; box-shadow: 0 8px 40px rgba(0,176,255,0.25);  }
+      83%  { border-color: #D500F9; box-shadow: 0 8px 40px rgba(213,0,249,0.25);  }
+      100% { border-color: #FF1744; box-shadow: 0 8px 40px rgba(255,23,68,0.25);  }
+    }
+
+    /* ── EVENT CARD ── */
+    .event-card {
+      background: var(--dark);
+      border-radius: var(--radius);
+      padding: 32px 28px;
+      border: 2px solid transparent;
+      transition: transform 0.3s;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .event-card:hover {
+      transform: translateY(-6px);
+      animation: rainbow-border 2s linear infinite;
+    }
+
+    .event-card-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+
+    .event-cat-tag {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 800;
+      padding: 4px 12px;
+      border-radius: 20px;
+      letter-spacing: 0.3px;
+    }
+
+    .cat-hike       { background: rgba(23,165,137,0.18); color: var(--teal); }
+    .cat-fitness    { background: rgba(27,91,170,0.18);  color: #5B9FE6; }
+    .cat-fundraiser { background: rgba(245,166,35,0.18); color: var(--gold); }
+    .cat-community  { background: rgba(155,89,182,0.18); color: #C67EE0; }
+
+    .event-badge-main {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--dark);
+      font-size: 0.68rem;
+      font-weight: 900;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 20px;
+    }
+
+    .event-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1.25;
+      margin-bottom: 10px;
+    }
+
+    .event-meta {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      margin-bottom: 16px;
+    }
+
+    .event-meta-item {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: rgba(255,255,255,0.55);
+    }
+
+    .event-meta-icon {
+      font-size: 0.9rem;
+      flex-shrink: 0;
+    }
+
+    .event-meta-item.date { color: var(--gold); }
+    .event-meta-item.loc  { color: rgba(255,255,255,0.5); }
+
+    .event-desc {
+      font-size: 0.92rem;
+      line-height: 1.7;
+      color: rgba(255,255,255,0.65);
+      font-weight: 500;
+      margin-bottom: 24px;
+      flex: 1;
+    }
+
+    .event-actions {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: auto;
+    }
+
+    .btn-cal {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 10px 18px;
+      border-radius: 50px;
+      border: 1.5px solid var(--teal);
+      color: var(--teal);
+      background: transparent;
+      font-family: 'Nunito', sans-serif;
+      font-size: 0.82rem;
+      font-weight: 800;
+      text-decoration: none;
+      transition: background 0.25s, color 0.25s;
+      cursor: pointer;
+    }
+
+    .btn-cal:hover {
+      background: var(--teal);
+      color: var(--white);
+    }
+
+    .btn-donate-card {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 10px 18px;
+      border-radius: 50px;
+      background: var(--gold);
+      color: var(--dark);
+      font-family: 'Nunito', sans-serif;
+      font-size: 0.82rem;
+      font-weight: 800;
+      text-decoration: none;
+      transition: transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 4px 14px rgba(245,166,35,0.3);
+    }
+
+    .btn-donate-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(245,166,35,0.45);
+    }
+
+    /* ── CTA BANNER ── */
+    .cta-banner {
+      position: relative;
+      background: linear-gradient(135deg, #0D3F7A 0%, #1B5BAA 50%, #17A589 100%);
+      overflow: hidden;
+      padding: 80px 40px;
+      text-align: center;
+    }
+
+    .cta-banner::before {
+      content: '';
+      position: absolute;
+      width: 600px; height: 600px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.04);
+      top: -200px; right: -100px;
+      pointer-events: none;
+    }
+
+    .cta-banner::after {
+      content: '';
+      position: absolute;
+      width: 400px; height: 400px;
+      border-radius: 50%;
+      background: rgba(245,166,35,0.06);
+      bottom: -100px; left: -100px;
+      pointer-events: none;
+    }
+
+    .cta-inner {
+      position: relative;
+      z-index: 1;
+      max-width: 640px;
+      margin: 0 auto;
+    }
+
+    .cta-label {
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 16px;
+    }
+
+    .cta-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 900;
+      color: var(--white);
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+
+    .cta-title span { color: var(--gold); }
+
+    .cta-sub {
+      font-size: 1rem;
+      color: rgba(255,255,255,0.75);
+      font-weight: 600;
+      margin-bottom: 36px;
+      line-height: 1.6;
+    }
+
+    .cta-btn {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--dark);
+      font-weight: 900;
+      font-size: 1.1rem;
+      padding: 18px 48px;
+      border-radius: 50px;
+      text-decoration: none;
+      transition: transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 6px 30px rgba(245,166,35,0.5);
+    }
+
+    .cta-btn:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(245,166,35,0.6);
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--dark);
+      color: rgba(255,255,255,0.6);
+      padding: 48px 40px;
+      text-align: center;
+      position: relative;
+    }
+
+    .footer-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      font-weight: 900;
+      color: var(--white);
+      margin-bottom: 12px;
+    }
+
+    .footer-logo span { color: var(--gold); }
+
+    .footer-links {
+      display: flex;
+      gap: 24px;
+      justify-content: center;
+      margin: 20px 0;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      color: rgba(255,255,255,0.5);
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 600;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover { color: var(--white); }
+
+    .footer-social {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      margin: 16px 0 0;
+    }
+
+    .footer-social a {
+      color: rgba(255,255,255,0.45);
+      transition: color 0.2s;
+    }
+
+    .footer-social a:hover { color: var(--white); }
+
+    .footer-rainbow {
+      height: 4px;
+      background: linear-gradient(90deg, #FF0000, #FF7700, #FFFF00, #00CC00, #0000FF, #8B00FF);
+      border-radius: 2px;
+      max-width: 200px;
+      margin: 24px auto 0;
+    }
+
+    .footer-copy {
+      font-size: 0.8rem;
+      margin-top: 20px;
+    }
+
+    /* ── SECTION LABEL ── */
+    .section-label {
+      font-size: 0.8rem;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 10px;
+    }
+
+    /* ── MOBILE ── */
+    @media (max-width: 768px) {
+      nav { padding: 14px 20px; }
+      .nav-hamburger { display: flex; }
+      .nav-links { display: none; }
+
+      .hero-inner { padding: 100px 24px 60px; }
+      .hero-inner h1 { font-size: 2.5rem; }
+      .hero-subtitle { font-size: 1rem; }
+
+      .filter-bar-wrap { top: 61px; }
+
+      .events-grid { grid-template-columns: 1fr; }
+
+      .events-section { padding: 40px 16px 60px; }
+
+      .cta-banner { padding: 60px 24px; }
+
+      footer { padding: 40px 24px; }
+
+      .event-card { padding: 24px 20px; }
+    }
+
+    @media (max-width: 480px) {
+      .filter-bar { justify-content: flex-start; padding: 12px 16px; }
+      .filter-tab { padding: 8px 16px; font-size: 0.82rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="index.html" class="nav-logo">
+      <img src="images/tss-logo.png" alt="Team Super Shea logo" class="tss-logo-anim" style="height:38px;width:auto;vertical-align:middle;margin-right:8px;" />Team <span>Super Shea</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html#story">Shea's Story</a></li>
+      <li><a href="index.html#hike">2026 Hike</a></li>
+      <li><a href="index.html#team">Our Team</a></li>
+      <li><a href="past-events.html">Past Hikes</a></li>
+      <li><a href="upcoming-events.html" class="nav-active">Events</a></li>
+      <li><a href="gear.html">Gear</a></li>
+      <li><a href="index.html#supporters">Community</a></li>
+      <li>
+        <a href="https://www.instagram.com/ariane_like_maryanne?igsh=MW5ydGxnMnEwazdraA==" target="_blank" rel="noopener" aria-label="Ariane on Instagram">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+        </a>
+      </li>
+      <li>
+        <a href="https://linktr.ee/ArianeLucas?utm_source=linktree_profile_share&ltsid=01f92b5c-df3f-49eb-8ffe-0dbfefe08ae5" target="_blank" rel="noopener" aria-label="Ariane's Linktree">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="vertical-align:middle"><path d="M7.953 15.066c-.08.163-.08.324-.08.486.08.517.528.897 1.052.897h2.172v4.716c0 .57.41 1.067.974 1.14a1.14 1.14 0 0 0 1.222-1.14v-4.716h2.252a1.07 1.07 0 0 0 1.052-.897c0-.162 0-.323-.08-.486l-3.864-7.438a1.02 1.02 0 0 0-.892-.546 1.02 1.02 0 0 0-.892.546L7.953 15.066zm3.945-12.01L9.344 5.61a.54.54 0 0 0 0 .762l2.554 2.554-2.554 2.555a.54.54 0 0 0 0 .761l.677.677a.54.54 0 0 0 .762 0L12 10.844l1.217 1.075a.54.54 0 0 0 .762 0l.677-.677a.54.54 0 0 0 0-.761L12.1 8.926l2.556-2.554a.54.54 0 0 0 0-.762l-2.556-2.554a.54.54 0 0 0-.762 0l-.677.677a.54.54 0 0 0 0 .762l1.076 1.216-1.076 1.055-1.075-1.055a.54.54 0 0 0-.762 0z"/></svg>
+        </a>
+      </li>
+      <li><a href="https://fundraise.cff.org/yosemite2026/teamsupershea25" target="_blank" rel="noopener" class="nav-donate">Donate</a></li>
+    </ul>
+    <button class="nav-hamburger" aria-label="Open navigation menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" role="dialog" aria-label="Navigation menu">
+    <ul class="mobile-menu-links">
+      <li><a href="index.html#story">Shea's Story</a></li>
+      <li><a href="index.html#hike">2026 Hike</a></li>
+      <li><a href="index.html#team">Our Team</a></li>
+      <li><a href="past-events.html">Past Hikes</a></li>
+      <li><a href="upcoming-events.html">Events</a></li>
+      <li><a href="gear.html">Gear</a></li>
+      <li><a href="index.html#supporters">Community</a></li>
+      <li>
+        <div class="mobile-menu-social">
+          <a href="https://www.instagram.com/ariane_like_maryanne?igsh=MW5ydGxnMnEwazdraA==" target="_blank" rel="noopener" aria-label="Ariane on Instagram">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+          </a>
+          <a href="https://linktr.ee/ArianeLucas?utm_source=linktree_profile_share&ltsid=01f92b5c-df3f-49eb-8ffe-0dbfefe08ae5" target="_blank" rel="noopener" aria-label="Ariane's Linktree">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M7.953 15.066c-.08.163-.08.324-.08.486.08.517.528.897 1.052.897h2.172v4.716c0 .57.41 1.067.974 1.14a1.14 1.14 0 0 0 1.222-1.14v-4.716h2.252a1.07 1.07 0 0 0 1.052-.897c0-.162 0-.323-.08-.486l-3.864-7.438a1.02 1.02 0 0 0-.892-.546 1.02 1.02 0 0 0-.892.546L7.953 15.066zm3.945-12.01L9.344 5.61a.54.54 0 0 0 0 .762l2.554 2.554-2.554 2.555a.54.54 0 0 0 0 .761l.677.677a.54.54 0 0 0 .762 0L12 10.844l1.217 1.075a.54.54 0 0 0 .762 0l.677-.677a.54.54 0 0 0 0-.761L12.1 8.926l2.556-2.554a.54.54 0 0 0 0-.762l-2.556-2.554a.54.54 0 0 0-.762 0l-.677.677a.54.54 0 0 0 0 .762l1.076 1.216-1.076 1.055-1.075-1.055a.54.54 0 0 0-.762 0z"/></svg>
+          </a>
+        </div>
+      </li>
+    </ul>
+    <a href="https://fundraise.cff.org/yosemite2026/teamsupershea25" target="_blank" rel="noopener" class="mobile-menu-donate">Donate Now 💛</a>
+  </div>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="hero-bg-circles"></div>
+    <div class="hero-inner">
+      <div class="hero-section-label">Upcoming</div>
+      <h1>2026 <span>Events</span></h1>
+      <p class="hero-subtitle">Every event is a chance to fight for Shea and every person living with CF.</p>
+    </div>
+    <div class="rainbow-bar"></div>
+  </header>
+
+  <!-- FILTER TABS -->
+  <div class="filter-bar-wrap">
+    <div class="filter-bar" role="tablist" aria-label="Filter events by category">
+      <button class="filter-tab active" data-filter="all" role="tab" aria-selected="true">
+        <span class="tab-dot"></span> All Events
+      </button>
+      <button class="filter-tab" data-filter="hike" role="tab" aria-selected="false">
+        <span class="tab-dot"></span> Hike
+      </button>
+      <button class="filter-tab" data-filter="fitness" role="tab" aria-selected="false">
+        <span class="tab-dot"></span> Fitness
+      </button>
+      <button class="filter-tab" data-filter="fundraiser" role="tab" aria-selected="false">
+        <span class="tab-dot"></span> Fundraiser
+      </button>
+      <button class="filter-tab" data-filter="community" role="tab" aria-selected="false">
+        <span class="tab-dot"></span> Community
+      </button>
+    </div>
+  </div>
+
+  <!-- EVENTS SECTION -->
+  <section class="events-section">
+    <div class="events-inner">
+      <div class="events-grid">
+
+        <!-- EVENT 1: CFF Xtreme Hike -->
+        <div class="event-card" data-category="hike">
+          <div class="event-card-top">
+            <span class="event-cat-tag cat-hike">🥾 Hike</span>
+            <span class="event-badge-main">MAIN EVENT</span>
+          </div>
+          <h2 class="event-title">CFF Xtreme Hike — Yosemite 2026</h2>
+          <div class="event-meta">
+            <div class="event-meta-item date">
+              <span class="event-meta-icon">📅</span>
+              October 3–5, 2026
+            </div>
+            <div class="event-meta-item loc">
+              <span class="event-meta-icon">📍</span>
+              Yosemite National Park, CA
+            </div>
+          </div>
+          <p class="event-desc">The big one. Year 6. Team Super Shea returns to Yosemite for the CFF Xtreme Hike — 17+ miles in one day, raising money for a cure. Every dollar, every step, every blister is for Shea.</p>
+          <div class="event-actions">
+            <a
+              href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=CFF+Xtreme+Hike+%E2%80%93+Team+Super+Shea&dates=20261003T080000Z%2F20261005T200000Z&details=Team+Super+Shea+at+the+CFF+Xtreme+Hike+%E2%80%93+Yosemite+2026.+17%2B+miles+for+a+cure.+Join+us+at+fundraise.cff.org%2Fyosemite2026%2Fteamsupershea25&location=Yosemite+National+Park%2C+CA"
+              target="_blank"
+              rel="noopener"
+              class="btn-cal"
+              aria-label="Add CFF Xtreme Hike to Google Calendar"
+            >
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+              Add to Calendar
+            </a>
+            <a
+              href="https://fundraise.cff.org/yosemite2026/teamsupershea25"
+              target="_blank"
+              rel="noopener"
+              class="btn-donate-card"
+            >
+              💛 Donate
+            </a>
+          </div>
+        </div>
+
+        <!-- EVENT 2: Workout for CF -->
+        <div class="event-card" data-category="fitness">
+          <div class="event-card-top">
+            <span class="event-cat-tag cat-fitness">💪 Fitness</span>
+          </div>
+          <h2 class="event-title">Workout for CF</h2>
+          <div class="event-meta">
+            <div class="event-meta-item date">
+              <span class="event-meta-icon">📅</span>
+              August 15, 2026
+            </div>
+            <div class="event-meta-item loc">
+              <span class="event-meta-icon">📍</span>
+              Huntington Beach, CA <span style="font-weight:600;opacity:0.6;">(TBD — confirm with team)</span>
+            </div>
+          </div>
+          <p class="event-desc">Sweat it out for a cure! Join us for a community workout session where every rep counts toward raising awareness and funds for the Cystic Fibrosis Foundation.</p>
+          <div class="event-actions">
+            <a
+              href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Workout+for+CF+%E2%80%93+Team+Super+Shea&dates=20260815T150000Z%2F20260815T170000Z&details=Community+workout+session+with+Team+Super+Shea+raising+awareness+and+funds+for+the+Cystic+Fibrosis+Foundation.&location=Huntington+Beach%2C+CA"
+              target="_blank"
+              rel="noopener"
+              class="btn-cal"
+              aria-label="Add Workout for CF to Google Calendar"
+            >
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+              Add to Calendar
+            </a>
+          </div>
+        </div>
+
+        <!-- EVENT 3: Fundraiser Night -->
+        <div class="event-card" data-category="fundraiser">
+          <div class="event-card-top">
+            <span class="event-cat-tag cat-fundraiser">🎉 Fundraiser</span>
+          </div>
+          <h2 class="event-title">Team Super Shea Fundraiser Night</h2>
+          <div class="event-meta">
+            <div class="event-meta-item date">
+              <span class="event-meta-icon">📅</span>
+              July 19, 2026
+            </div>
+            <div class="event-meta-item loc">
+              <span class="event-meta-icon">📍</span>
+              Orange County, CA
+            </div>
+          </div>
+          <p class="event-desc">Come celebrate, connect, and contribute! An evening out with the team — food, fun, and raising money for CF research. Details coming soon.</p>
+          <div class="event-actions">
+            <a
+              href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Team+Super+Shea+Fundraiser+Night&dates=20260719T230000Z%2F20260720T020000Z&details=An+evening+with+Team+Super+Shea+%E2%80%94+food%2C+fun%2C+and+raising+money+for+CF+research.+More+details+at+teamsupershea.com&location=Orange+County%2C+CA"
+              target="_blank"
+              rel="noopener"
+              class="btn-cal"
+              aria-label="Add Fundraiser Night to Google Calendar"
+            >
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+              Add to Calendar
+            </a>
+          </div>
+        </div>
+
+        <!-- EVENT 4: Hike Training Day -->
+        <div class="event-card" data-category="fitness">
+          <div class="event-card-top">
+            <span class="event-cat-tag cat-fitness">💪 Fitness</span>
+          </div>
+          <h2 class="event-title">Hike Training Day</h2>
+          <div class="event-meta">
+            <div class="event-meta-item date">
+              <span class="event-meta-icon">📅</span>
+              September 13, 2026
+            </div>
+            <div class="event-meta-item loc">
+              <span class="event-meta-icon">📍</span>
+              Crystal Cove State Park, CA
+            </div>
+          </div>
+          <p class="event-desc">Get those legs ready! Join the team for a training hike ahead of Yosemite. All fitness levels welcome — the only requirement is heart.</p>
+          <div class="event-actions">
+            <a
+              href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Team+Super+Shea+Hike+Training+Day&dates=20260913T150000Z%2F20260913T190000Z&details=Team+Super+Shea+training+hike+ahead+of+the+CFF+Xtreme+Hike+in+Yosemite.+All+fitness+levels+welcome!&location=Crystal+Cove+State+Park%2C+CA"
+              target="_blank"
+              rel="noopener"
+              class="btn-cal"
+              aria-label="Add Hike Training Day to Google Calendar"
+            >
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+              Add to Calendar
+            </a>
+          </div>
+        </div>
+
+        <!-- EVENT 5: Final Push -->
+        <div class="event-card" data-category="fundraiser">
+          <div class="event-card-top">
+            <span class="event-cat-tag cat-fundraiser">🎉 Fundraiser</span>
+          </div>
+          <h2 class="event-title">Final Push — Last Call to Donate</h2>
+          <div class="event-meta">
+            <div class="event-meta-item date">
+              <span class="event-meta-icon">📅</span>
+              September 28, 2026
+            </div>
+            <div class="event-meta-item loc">
+              <span class="event-meta-icon">📍</span>
+              Online
+            </div>
+          </div>
+          <p class="event-desc">Five days before the hike kicks off, we make our final push to hit our fundraising goal. Share the page, text your friends, and help us finish strong for Shea.</p>
+          <div class="event-actions">
+            <a
+              href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Team+Super+Shea+%E2%80%93+Final+Push+to+Donate&dates=20260928T070000Z%2F20260928T230000Z&details=Five+days+before+the+hike%2C+Team+Super+Shea+makes+their+final+fundraising+push.+Donate+at+fundraise.cff.org%2Fyosemite2026%2Fteamsupershea25&location=Online"
+              target="_blank"
+              rel="noopener"
+              class="btn-cal"
+              aria-label="Add Final Push to Google Calendar"
+            >
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+              Add to Calendar
+            </a>
+            <a
+              href="https://fundraise.cff.org/yosemite2026/teamsupershea25"
+              target="_blank"
+              rel="noopener"
+              class="btn-donate-card"
+            >
+              💛 Donate
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BANNER -->
+  <div class="cta-banner">
+    <div class="cta-inner">
+      <div class="cta-label">Make a Difference</div>
+      <h2 class="cta-title">Ready to fight for <span>Shea</span>?</h2>
+      <p class="cta-sub">Every dollar fights cystic fibrosis. 100% of donations go directly to the Cystic Fibrosis Foundation for research and care.</p>
+      <a href="https://fundraise.cff.org/yosemite2026/teamsupershea25" target="_blank" rel="noopener" class="cta-btn">Donate Now 💛</a>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <img src="images/tss-logo.png" class="tss-logo-anim" style="height:70px;width:auto;margin-bottom:12px;opacity:0.85;" alt="Team Super Shea logo" />
+    <div class="footer-logo">Team <span>Super Shea</span></div>
+    <p style="font-size:0.9rem;max-width:480px;margin:0 auto 16px;">Hiking for hope. Fighting for a cure. Celebrating Shea every step of the way.</p>
+    <div class="footer-links">
+      <a href="index.html#story">Shea's Story</a>
+      <a href="index.html#hike">The Hike</a>
+      <a href="index.html#team">Our Team</a>
+      <a href="past-events.html">Past Hikes</a>
+      <a href="upcoming-events.html">Events</a>
+      <a href="gear.html">Gear</a>
+      <a href="https://fundraise.cff.org/yosemite2026/teamsupershea25" target="_blank" rel="noopener">Donate</a>
+    </div>
+    <div class="footer-social">
+      <a href="https://www.instagram.com/ariane_like_maryanne?igsh=MW5ydGxnMnEwazdraA==" target="_blank" rel="noopener" aria-label="Ariane on Instagram">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+      </a>
+      <a href="https://linktr.ee/ArianeLucas?utm_source=linktree_profile_share&ltsid=01f92b5c-df3f-49eb-8ffe-0dbfefe08ae5" target="_blank" rel="noopener" aria-label="Ariane's Linktree">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M7.953 15.066c-.08.163-.08.324-.08.486.08.517.528.897 1.052.897h2.172v4.716c0 .57.41 1.067.974 1.14a1.14 1.14 0 0 0 1.222-1.14v-4.716h2.252a1.07 1.07 0 0 0 1.052-.897c0-.162 0-.323-.08-.486l-3.864-7.438a1.02 1.02 0 0 0-.892-.546 1.02 1.02 0 0 0-.892.546L7.953 15.066zm3.945-12.01L9.344 5.61a.54.54 0 0 0 0 .762l2.554 2.554-2.554 2.555a.54.54 0 0 0 0 .761l.677.677a.54.54 0 0 0 .762 0L12 10.844l1.217 1.075a.54.54 0 0 0 .762 0l.677-.677a.54.54 0 0 0 0-.761L12.1 8.926l2.556-2.554a.54.54 0 0 0 0-.762l-2.556-2.554a.54.54 0 0 0-.762 0l-.677.677a.54.54 0 0 0 0 .762l1.076 1.216-1.076 1.055-1.075-1.055a.54.54 0 0 0-.762 0z"/></svg>
+      </a>
+    </div>
+    <div class="footer-rainbow"></div>
+    <p class="footer-copy">&copy; 2026 Team Super Shea &bull; In support of the Cystic Fibrosis Foundation</p>
+  </footer>
+
+  <script>
+    // Mobile hamburger menu
+    (function() {
+      var btn = document.querySelector('.nav-hamburger');
+      var menu = document.querySelector('.mobile-menu');
+      btn.addEventListener('click', function() {
+        var isOpen = menu.classList.toggle('open');
+        btn.classList.toggle('open', isOpen);
+        btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        document.body.style.overflow = isOpen ? 'hidden' : '';
+      });
+      document.querySelectorAll('.mobile-menu-links a, .mobile-menu-donate').forEach(function(link) {
+        link.addEventListener('click', function() {
+          menu.classList.remove('open');
+          btn.classList.remove('open');
+          btn.setAttribute('aria-expanded', 'false');
+          document.body.style.overflow = '';
+        });
+      });
+    })();
+
+    // Filter tabs
+    document.querySelectorAll('.filter-tab').forEach(function(tab) {
+      tab.addEventListener('click', function() {
+        document.querySelectorAll('.filter-tab').forEach(function(t) {
+          t.classList.remove('active');
+          t.setAttribute('aria-selected', 'false');
+        });
+        this.classList.add('active');
+        this.setAttribute('aria-selected', 'true');
+        var cat = this.dataset.filter;
+        document.querySelectorAll('.event-card').forEach(function(card) {
+          card.style.display = (cat === 'all' || card.dataset.category === cat) ? '' : 'none';
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>
