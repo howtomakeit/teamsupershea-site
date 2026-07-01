@@ -806,17 +806,11 @@
       <button class="filter-tab active" data-filter="all" role="tab" aria-selected="true">
         <span class="tab-dot"></span> All Events
       </button>
-      <button class="filter-tab" data-filter="hike" role="tab" aria-selected="false">
-        <span class="tab-dot"></span> Hike
-      </button>
       <button class="filter-tab" data-filter="fitness" role="tab" aria-selected="false">
         <span class="tab-dot"></span> Fitness
       </button>
       <button class="filter-tab" data-filter="fundraiser" role="tab" aria-selected="false">
         <span class="tab-dot"></span> Fundraiser
-      </button>
-      <button class="filter-tab" data-filter="community" role="tab" aria-selected="false">
-        <span class="tab-dot"></span> Community
       </button>
     </div>
   </div>
@@ -826,31 +820,88 @@
     <div class="events-inner">
       <div class="events-grid">
 
-        <!-- EVENT 1: CFF Xtreme Hike -->
-        <div class="event-card" data-category="hike">
+        <!-- EVENT 1: 65 Roses Workout for CF -->
+        <div class="event-card" data-category="fitness">
           <div class="event-card-top">
-            <span class="event-cat-tag cat-hike">🥾 Hike</span>
-            <span class="event-badge-main">MAIN EVENT</span>
+            <span class="event-cat-tag cat-fitness">💪 Fitness</span>
           </div>
-          <h2 class="event-title">CFF Xtreme Hike — Yosemite 2026</h2>
+          <h2 class="event-title">65 Roses Workout for CF!</h2>
           <div class="event-meta">
             <div class="event-meta-item date">
               <span class="event-meta-icon">📅</span>
-              October 3–5, 2026
-            </div>
-            <div class="event-meta-item loc">
-              <span class="event-meta-icon">📍</span>
-              Yosemite National Park, CA
+              June 27, 2026
             </div>
           </div>
-          <p class="event-desc">The big one. Year 6. Team Super Shea returns to Yosemite for the CFF Xtreme Hike — 17+ miles in one day, raising money for a cure. Every dollar, every step, every blister is for Shea.</p>
+          <p class="event-desc">Sweat for a cause! The 65 Roses Workout for CF is a community fitness event raising awareness and funds for everyone living with Cystic Fibrosis. Every rep counts.</p>
           <div class="event-actions">
             <a
-              href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=CFF+Xtreme+Hike+%E2%80%93+Team+Super+Shea&dates=20261003T080000Z%2F20261005T200000Z&details=Team+Super+Shea+at+the+CFF+Xtreme+Hike+%E2%80%93+Yosemite+2026.+17%2B+miles+for+a+cure.+Join+us+at+fundraise.cff.org%2Fyosemite2026%2Fteamsupershea25&location=Yosemite+National+Park%2C+CA"
+              href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=65+Roses+Workout+for+CF+%E2%80%93+Team+Super+Shea&dates=20260627T150000Z%2F20260627T170000Z&details=Community+fitness+event+raising+awareness+and+funds+for+Cystic+Fibrosis.+Team+Super+Shea.&location="
               target="_blank"
               rel="noopener"
               class="btn-cal"
-              aria-label="Add CFF Xtreme Hike to Google Calendar"
+              aria-label="Add 65 Roses Workout to Google Calendar"
+            >
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+              Add to Calendar
+            </a>
+          </div>
+        </div>
+
+        <!-- EVENT 2: Beers for CF -->
+        <div class="event-card" data-category="fundraiser">
+          <div class="event-card-top">
+            <span class="event-cat-tag cat-fundraiser">🎉 Fundraiser</span>
+          </div>
+          <h2 class="event-title">Beers for CF at Unsung Brewing!</h2>
+          <div class="event-meta">
+            <div class="event-meta-item date">
+              <span class="event-meta-icon">📅</span>
+              July 25, 2026
+            </div>
+            <div class="event-meta-item loc">
+              <span class="event-meta-icon">📍</span>
+              Unsung Brewing <span style="font-weight:600;opacity:0.6;">(details coming soon!)</span>
+            </div>
+          </div>
+          <p class="event-desc">Raise a glass for a cure! Join Team Super Shea at Unsung Brewing for Beers for CF — a fun evening out with the community, all in support of the Cystic Fibrosis Foundation. Details dropping soon.</p>
+          <div class="event-actions">
+            <a
+              href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Beers+for+CF+at+Unsung+Brewing+%E2%80%93+Team+Super+Shea&dates=20260725T180000Z%2F20260725T210000Z&details=Join+Team+Super+Shea+at+Unsung+Brewing+for+Beers+for+CF+%E2%80%94+a+fun+evening+raising+funds+for+the+Cystic+Fibrosis+Foundation.+Details+coming+soon!&location=Unsung+Brewing"
+              target="_blank"
+              rel="noopener"
+              class="btn-cal"
+              aria-label="Add Beers for CF to Google Calendar"
+            >
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+              Add to Calendar
+            </a>
+          </div>
+        </div>
+
+        <!-- EVENT 3: Online Silent Auction -->
+        <div class="event-card" data-category="fundraiser">
+          <div class="event-card-top">
+            <span class="event-cat-tag cat-fundraiser">🎉 Fundraiser</span>
+          </div>
+          <h2 class="event-title">Online Silent Auction for CF!</h2>
+          <div class="event-meta">
+            <div class="event-meta-item date">
+              <span class="event-meta-icon">📅</span>
+              August 7–14, 2026
+            </div>
+            <div class="event-meta-item loc">
+              <span class="event-meta-icon">📍</span>
+              Online <span style="font-weight:600;opacity:0.6;">(details coming soon!)</span>
+            </div>
+          </div>
+          <p class="event-desc">Bid big for a cure! Team Super Shea's online silent auction runs August 7–14. Watch for incredible items up for grabs — every bid puts us closer to the finish line for Shea and every person living with CF.</p>
+          <div class="event-actions">
+            <a
+              href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Team+Super+Shea+Online+Silent+Auction+for+CF&dates=20260807T070000Z%2F20260814T070000Z&details=Team+Super+Shea%27s+online+silent+auction+%E2%80%94+bid+big+for+a+cure!+Details+coming+soon+at+teamsupershea.com&location=Online"
+              target="_blank"
+              rel="noopener"
+              class="btn-cal"
+              aria-label="Add Silent Auction to Google Calendar"
             >
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
               Add to Calendar
@@ -866,137 +917,6 @@
           </div>
         </div>
 
-        <!-- EVENT 2: Workout for CF -->
-        <div class="event-card" data-category="fitness">
-          <div class="event-card-top">
-            <span class="event-cat-tag cat-fitness">💪 Fitness</span>
-          </div>
-          <h2 class="event-title">Workout for CF</h2>
-          <div class="event-meta">
-            <div class="event-meta-item date">
-              <span class="event-meta-icon">📅</span>
-              August 15, 2026
-            </div>
-            <div class="event-meta-item loc">
-              <span class="event-meta-icon">📍</span>
-              Huntington Beach, CA <span style="font-weight:600;opacity:0.6;">(TBD — confirm with team)</span>
-            </div>
-          </div>
-          <p class="event-desc">Sweat it out for a cure! Join us for a community workout session where every rep counts toward raising awareness and funds for the Cystic Fibrosis Foundation.</p>
-          <div class="event-actions">
-            <a
-              href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Workout+for+CF+%E2%80%93+Team+Super+Shea&dates=20260815T150000Z%2F20260815T170000Z&details=Community+workout+session+with+Team+Super+Shea+raising+awareness+and+funds+for+the+Cystic+Fibrosis+Foundation.&location=Huntington+Beach%2C+CA"
-              target="_blank"
-              rel="noopener"
-              class="btn-cal"
-              aria-label="Add Workout for CF to Google Calendar"
-            >
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-              Add to Calendar
-            </a>
-          </div>
-        </div>
-
-        <!-- EVENT 3: Fundraiser Night -->
-        <div class="event-card" data-category="fundraiser">
-          <div class="event-card-top">
-            <span class="event-cat-tag cat-fundraiser">🎉 Fundraiser</span>
-          </div>
-          <h2 class="event-title">Team Super Shea Fundraiser Night</h2>
-          <div class="event-meta">
-            <div class="event-meta-item date">
-              <span class="event-meta-icon">📅</span>
-              July 19, 2026
-            </div>
-            <div class="event-meta-item loc">
-              <span class="event-meta-icon">📍</span>
-              Orange County, CA
-            </div>
-          </div>
-          <p class="event-desc">Come celebrate, connect, and contribute! An evening out with the team — food, fun, and raising money for CF research. Details coming soon.</p>
-          <div class="event-actions">
-            <a
-              href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Team+Super+Shea+Fundraiser+Night&dates=20260719T230000Z%2F20260720T020000Z&details=An+evening+with+Team+Super+Shea+%E2%80%94+food%2C+fun%2C+and+raising+money+for+CF+research.+More+details+at+teamsupershea.com&location=Orange+County%2C+CA"
-              target="_blank"
-              rel="noopener"
-              class="btn-cal"
-              aria-label="Add Fundraiser Night to Google Calendar"
-            >
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-              Add to Calendar
-            </a>
-          </div>
-        </div>
-
-        <!-- EVENT 4: Hike Training Day -->
-        <div class="event-card" data-category="fitness">
-          <div class="event-card-top">
-            <span class="event-cat-tag cat-fitness">💪 Fitness</span>
-          </div>
-          <h2 class="event-title">Hike Training Day</h2>
-          <div class="event-meta">
-            <div class="event-meta-item date">
-              <span class="event-meta-icon">📅</span>
-              September 13, 2026
-            </div>
-            <div class="event-meta-item loc">
-              <span class="event-meta-icon">📍</span>
-              Crystal Cove State Park, CA
-            </div>
-          </div>
-          <p class="event-desc">Get those legs ready! Join the team for a training hike ahead of Yosemite. All fitness levels welcome — the only requirement is heart.</p>
-          <div class="event-actions">
-            <a
-              href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Team+Super+Shea+Hike+Training+Day&dates=20260913T150000Z%2F20260913T190000Z&details=Team+Super+Shea+training+hike+ahead+of+the+CFF+Xtreme+Hike+in+Yosemite.+All+fitness+levels+welcome!&location=Crystal+Cove+State+Park%2C+CA"
-              target="_blank"
-              rel="noopener"
-              class="btn-cal"
-              aria-label="Add Hike Training Day to Google Calendar"
-            >
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-              Add to Calendar
-            </a>
-          </div>
-        </div>
-
-        <!-- EVENT 5: Final Push -->
-        <div class="event-card" data-category="fundraiser">
-          <div class="event-card-top">
-            <span class="event-cat-tag cat-fundraiser">🎉 Fundraiser</span>
-          </div>
-          <h2 class="event-title">Final Push — Last Call to Donate</h2>
-          <div class="event-meta">
-            <div class="event-meta-item date">
-              <span class="event-meta-icon">📅</span>
-              September 28, 2026
-            </div>
-            <div class="event-meta-item loc">
-              <span class="event-meta-icon">📍</span>
-              Online
-            </div>
-          </div>
-          <p class="event-desc">Five days before the hike kicks off, we make our final push to hit our fundraising goal. Share the page, text your friends, and help us finish strong for Shea.</p>
-          <div class="event-actions">
-            <a
-              href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Team+Super+Shea+%E2%80%93+Final+Push+to+Donate&dates=20260928T070000Z%2F20260928T230000Z&details=Five+days+before+the+hike%2C+Team+Super+Shea+makes+their+final+fundraising+push.+Donate+at+fundraise.cff.org%2Fyosemite2026%2Fteamsupershea25&location=Online"
-              target="_blank"
-              rel="noopener"
-              class="btn-cal"
-              aria-label="Add Final Push to Google Calendar"
-            >
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-              Add to Calendar
-            </a>
-            <a
-              href="https://fundraise.cff.org/yosemite2026/teamsupershea25"
-              target="_blank"
-              rel="noopener"
-              class="btn-donate-card"
-            >
-              💛 Donate
-            </a>
-          </div>
-        </div>
 
       </div>
     </div>
