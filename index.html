@@ -609,6 +609,133 @@
       .hike-years { padding-bottom: 48px; }
     }
 
+    /* ── EVENTS PREVIEW ── */
+    .events-preview { padding: 80px 40px; background: #fff; }
+    .events-preview-inner { max-width: 1100px; margin: 0 auto; }
+    .events-preview .section-label { color: var(--teal); }
+    .events-preview-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-top: 40px;
+    }
+    .ep-card {
+      background: #F8FBFF;
+      border-radius: var(--radius);
+      padding: 28px 24px;
+      box-shadow: 0 4px 20px rgba(27,91,170,0.09);
+      border-top: 4px solid var(--blue);
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .ep-card:hover { transform: translateY(-5px); box-shadow: 0 14px 36px rgba(27,91,170,0.18); }
+    .ep-cat {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 800;
+      padding: 4px 12px;
+      border-radius: 50px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 14px;
+      align-self: flex-start;
+    }
+    .ep-cat-fitness  { background: #EFF6FF; color: var(--blue); }
+    .ep-cat-fundraiser { background: #F0FDF4; color: #16A34A; }
+    .ep-date { font-size: 0.82rem; font-weight: 900; color: var(--gray); margin-bottom: 8px; letter-spacing: 0.04em; }
+    .ep-title { font-size: 1.12rem; font-weight: 800; color: var(--dark); margin-bottom: 10px; line-height: 1.35; }
+    .ep-desc { font-size: 0.88rem; color: var(--gray); line-height: 1.6; flex: 1; }
+    .ep-cal {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 18px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--blue);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .ep-cal:hover { color: var(--blue-dk); }
+    .events-preview-cta { text-align: center; margin-top: 40px; }
+    .events-preview-cta a {
+      display: inline-block;
+      background: transparent;
+      border: 2.5px solid var(--blue);
+      color: var(--blue);
+      font-weight: 800;
+      font-size: 0.95rem;
+      padding: 14px 32px;
+      border-radius: 50px;
+      text-decoration: none;
+      transition: background 0.2s, color 0.2s;
+    }
+    .events-preview-cta a:hover { background: var(--blue); color: #fff; }
+
+    /* ── GEAR PREVIEW ── */
+    .gear-preview { padding: 80px 40px; background: linear-gradient(180deg, #EDF4FF 0%, #F0F7FF 100%); }
+    .gear-preview-inner { max-width: 1100px; margin: 0 auto; text-align: center; }
+    .gear-preview .section-label { color: var(--teal); }
+    .gear-preview-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-top: 40px;
+    }
+    .gp-card {
+      background: #fff;
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(27,91,170,0.12);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .gp-card:hover { transform: translateY(-6px); box-shadow: 0 16px 44px rgba(27,91,170,0.22); }
+    .gp-img { height: 250px; overflow: hidden; }
+    .gp-img img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+      transition: transform 0.4s;
+    }
+    .gp-card:hover .gp-img img { transform: scale(1.05); }
+    .gp-info { padding: 20px 20px 24px; }
+    .gp-name { font-size: 1rem; font-weight: 800; color: var(--dark); margin-bottom: 14px; }
+    .gp-btn {
+      display: block;
+      background: var(--blue);
+      color: #fff;
+      font-weight: 800;
+      font-size: 0.88rem;
+      padding: 12px 20px;
+      border-radius: 50px;
+      text-align: center;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+    .gp-btn:hover { background: var(--blue-dk); }
+    .gear-preview-cta { text-align: center; margin-top: 40px; }
+    .gear-preview-cta a {
+      display: inline-block;
+      background: var(--blue);
+      color: #fff;
+      font-weight: 800;
+      font-size: 0.95rem;
+      padding: 14px 36px;
+      border-radius: 50px;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .gear-preview-cta a:hover { background: var(--blue-dk); transform: translateY(-2px); }
+
+    @media (max-width: 768px) {
+      .events-preview { padding: 60px 24px; }
+      .events-preview-grid { grid-template-columns: 1fr; }
+      .gear-preview { padding: 60px 24px; }
+      .gear-preview-grid { grid-template-columns: 1fr; }
+    }
+
     /* ── DONATE ── */
     .donate-section {
       background: linear-gradient(135deg, #0D3F7A 0%, #1B5BAA 50%, #17A589 100%);
@@ -1646,8 +1773,100 @@
           </div>
 
         </div>
+        <div style="text-align:center; margin-top:32px;">
+          <a href="past-events.html" style="display:inline-block;border:2.5px solid var(--blue);color:var(--blue);font-weight:800;font-size:0.9rem;padding:12px 28px;border-radius:50px;text-decoration:none;transition:background 0.2s,color 0.2s;" onmouseover="this.style.background='var(--blue)';this.style.color='#fff'" onmouseout="this.style.background='';this.style.color='var(--blue)'">View Full Hike History →</a>
+        </div>
       </div>
 
+    </div>
+  </section>
+
+  <!-- EVENTS PREVIEW -->
+  <section class="events-preview" id="events">
+    <div class="events-preview-inner">
+      <div class="section-label">What's Coming Up</div>
+      <h2 class="section-title">Upcoming <span>Events</span></h2>
+      <div class="events-preview-grid">
+
+        <div class="ep-card">
+          <span class="ep-cat ep-cat-fitness">Fitness</span>
+          <div class="ep-date">SAT, JUNE 27, 2026 &bull; 10:00 AM</div>
+          <div class="ep-title">65 Roses Workout for CF!</div>
+          <div class="ep-desc">Join us for a fitness event in honor of the 65 Roses — the nickname kids used to use for cystic fibrosis. Every rep is a step toward a cure.</div>
+          <a class="ep-cal" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=65+Roses+Workout+for+CF!&dates=20260627T170000Z/20260627T190000Z&details=Team+Super+Shea+fitness+event+for+the+Cystic+Fibrosis+Foundation.+teamsupershea.com" target="_blank" rel="noopener">
+            📅 Add to Calendar
+          </a>
+        </div>
+
+        <div class="ep-card">
+          <span class="ep-cat ep-cat-fundraiser">Fundraiser</span>
+          <div class="ep-date">SAT, JULY 25, 2026</div>
+          <div class="ep-title">Beers for CF at Unsung Brewing!</div>
+          <div class="ep-desc">Come raise a glass for a great cause at Unsung Brewing. Details coming soon — stay tuned for times and more info.</div>
+          <a class="ep-cal" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Beers+for+CF+at+Unsung+Brewing!&dates=20260725T000000Z/20260725T235900Z&details=Team+Super+Shea+fundraiser+at+Unsung+Brewing.+Details+coming+soon.+teamsupershea.com" target="_blank" rel="noopener">
+            📅 Add to Calendar
+          </a>
+        </div>
+
+        <div class="ep-card">
+          <span class="ep-cat ep-cat-fundraiser">Fundraiser</span>
+          <div class="ep-date">AUG 7–14, 2026</div>
+          <div class="ep-title">Online Silent Auction for CF!</div>
+          <div class="ep-desc">A week-long online silent auction to raise funds for the Cystic Fibrosis Foundation. Bid on great items from wherever you are. Details coming soon.</div>
+          <a class="ep-cal" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Online+Silent+Auction+for+CF!&dates=20260807T000000Z/20260814T235900Z&details=Team+Super+Shea+online+silent+auction+for+the+Cystic+Fibrosis+Foundation.+teamsupershea.com" target="_blank" rel="noopener">
+            📅 Add to Calendar
+          </a>
+        </div>
+
+      </div>
+      <div class="events-preview-cta">
+        <a href="upcoming-events.html">See All Events &amp; Details →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- GEAR PREVIEW -->
+  <section class="gear-preview" id="gear">
+    <div class="gear-preview-inner">
+      <div class="section-label">Official Team Gear</div>
+      <h2 class="section-title">Wear the <span>Fight</span></h2>
+      <p style="color:var(--gray);font-size:1rem;max-width:540px;margin:0 auto;">Official Team Super Shea gear, fulfilled by Bonfire. Every purchase supports our fight for a CF cure.</p>
+      <div class="gear-preview-grid">
+
+        <div class="gp-card">
+          <div class="gp-img">
+            <img loading="lazy" decoding="async" src="images/gear-tank.jpeg" alt="TSS Tank Top"/>
+          </div>
+          <div class="gp-info">
+            <div class="gp-name">TSS Tank Top</div>
+            <a href="https://www.bonfire.com/tank-tops-66/" target="_blank" rel="noopener" class="gp-btn">Shop on Bonfire →</a>
+          </div>
+        </div>
+
+        <div class="gp-card">
+          <div class="gp-img">
+            <img loading="lazy" decoding="async" src="images/gear-tee.jpeg" alt="Team Super-Shea Tee"/>
+          </div>
+          <div class="gp-info">
+            <div class="gp-name">Team Super-Shea Tee</div>
+            <a href="https://www.bonfire.com/crewneck-sweatshirt-t-shirts/" target="_blank" rel="noopener" class="gp-btn">Shop on Bonfire →</a>
+          </div>
+        </div>
+
+        <div class="gp-card">
+          <div class="gp-img">
+            <img loading="lazy" decoding="async" src="images/gear-hoodie.jpeg" alt="CFF Supporter Zip-up Hoodie"/>
+          </div>
+          <div class="gp-info">
+            <div class="gp-name">CFF Supporter Zip-up Hoodie</div>
+            <a href="https://www.bonfire.com/cff-supporter-zipup-hoodie/" target="_blank" rel="noopener" class="gp-btn">Shop on Bonfire →</a>
+          </div>
+        </div>
+
+      </div>
+      <div class="gear-preview-cta">
+        <a href="gear.html">View Full Gear Store →</a>
+      </div>
     </div>
   </section>
 
@@ -1680,7 +1899,7 @@
               </p>
             </div>
           </div>
-          <a href="https://fundraise.cff.org/yosemite2026/Donate/Index/2128397?submit=Continue" target="_blank" rel="noopener" class="team-donate-btn">Donate for Ariane</a>
+          <a href="https://fundraise.cff.org/yosemite2026/Donate/Index/2128397?submit=Continue" target="_blank" rel="noopener" class="team-donate-btn">Donate to Ariane</a>
         </div>
 
         <div class="team-member">
@@ -1696,7 +1915,7 @@
               </p>
             </div>
           </div>
-          <a href="https://fundraise.cff.org/yosemite2026/Donate/Index/2128397?submit=Continue" target="_blank" rel="noopener" class="team-donate-btn">Donate for Cathy</a>
+          <a href="https://fundraise.cff.org/yosemite2026/Donate/Index/2128397?submit=Continue" target="_blank" rel="noopener" class="team-donate-btn">Donate to Cathy</a>
         </div>
 
         <div class="team-member">
@@ -1711,7 +1930,7 @@
               </p>
             </div>
           </div>
-          <a href="https://fundraise.cff.org/yosemite2026/Donate/Index/2139960?submit=Continue" target="_blank" rel="noopener" class="team-donate-btn">Donate for Mike</a>
+          <a href="https://fundraise.cff.org/yosemite2026/Donate/Index/2139960?submit=Continue" target="_blank" rel="noopener" class="team-donate-btn">Donate to Mike</a>
         </div>
 
         <div class="team-member">
@@ -1727,7 +1946,7 @@
               </p>
             </div>
           </div>
-          <a href="https://fundraise.cff.org/yosemite2026/Member/MyPage/10153564/Jen-Rush" target="_blank" rel="noopener" class="team-donate-btn">Donate for Jen</a>
+          <a href="https://fundraise.cff.org/yosemite2026/Member/MyPage/10153564/Jen-Rush" target="_blank" rel="noopener" class="team-donate-btn">Donate to Jen</a>
         </div>
 
       </div>
