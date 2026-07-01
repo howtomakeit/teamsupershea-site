@@ -422,17 +422,18 @@
       overflow: hidden;
     }
 
-    .product-emoji {
-      font-size: 64px;
+    .product-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
       position: relative;
       z-index: 2;
-      display: block;
-      filter: drop-shadow(0 4px 12px rgba(0,0,0,0.2));
-      transition: transform 0.3s;
+      transition: transform 0.35s;
     }
 
-    .product-card:hover .product-emoji {
-      transform: scale(1.12) rotate(-5deg);
+    .product-card:hover .product-img img {
+      transform: scale(1.04);
     }
 
     .product-rainbow-overlay {
@@ -1006,8 +1007,8 @@
 
     <!-- Product 1: Tank Top -->
     <div class="product-card">
-      <div class="product-img" style="background: linear-gradient(135deg, #1B5BAA, #17A589);">
-        <span class="product-emoji">👕</span>
+      <div class="product-img">
+        <img src="images/gear-tank.jpeg" alt="TSS Tank Top — Team Super-Shea design on a blue crop tank" loading="lazy" />
         <div class="product-rainbow-overlay"></div>
       </div>
       <div class="product-info">
@@ -1016,22 +1017,22 @@
       </div>
     </div>
 
-    <!-- Product 2: Crewneck Sweatshirt -->
+    <!-- Product 2: Tee -->
     <div class="product-card">
-      <div class="product-img" style="background: linear-gradient(135deg, #0D3F7A, #1B5BAA);">
-        <span class="product-emoji">👔</span>
+      <div class="product-img">
+        <img src="images/gear-tee.jpeg" alt="Team Super-Shea graphic tee — superhero with roses on charcoal" loading="lazy" />
         <div class="product-rainbow-overlay"></div>
       </div>
       <div class="product-info">
-        <div class="product-name">Crewneck Sweatshirt</div>
+        <div class="product-name">Team Super-Shea Tee</div>
         <a href="https://www.bonfire.com/crewneck-sweatshirt-t-shirts/" target="_blank" rel="noopener" class="add-to-cart-btn">Shop on Bonfire →</a>
       </div>
     </div>
 
     <!-- Product 3: Zip-up Hoodie -->
     <div class="product-card">
-      <div class="product-img" style="background: linear-gradient(135deg, #F5A623, #E8830A);">
-        <span class="product-emoji">🧥</span>
+      <div class="product-img">
+        <img src="images/gear-hoodie.jpeg" alt="CFF Supporter Zip-up Hoodie — Team Super Shea! on heather grey" loading="lazy" />
         <div class="product-rainbow-overlay"></div>
       </div>
       <div class="product-info">
